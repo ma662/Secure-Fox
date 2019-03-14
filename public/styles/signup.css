@@ -26,9 +26,16 @@
 }
 
 html,body{
-    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-image: url('../images/colton-sturgeon-1059840-unsplash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
     }
+
+    /* responsive */
+#art{
+    
+    position: absolute;
+    margin-left: 30%;
+}
