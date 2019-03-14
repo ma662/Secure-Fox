@@ -20,8 +20,27 @@ module.exports = function(app) {
     });
   });
 
+  // Route for signup page
+  app.get("/signup",(req,res) => {
+    res.render("signup");
+    
+  });
+
+  // Route for signup page
+  app.get("/login",(req,res) => {
+    res.render("login");
+    
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+  
+
+
+
 };
+
+ 
