@@ -1,0 +1,65 @@
+
+ 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+  
+      <div>
+        <!-- Calendar Box to be added-->
+        Calendar
+      </div>
+      <div>
+        <!-- Logo to be added-->
+        Logo
+      </div>
+  
+      <!-- Button on top right of screen with user name, which needs to be filled in from HandleBars template -->
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          {{name}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Account Settings</a>
+          <a class="dropdown-item" href="#">Help &amp; FAQ</a>
+          <a class="dropdown-item" href="#">Logout</a>
+        </div>
+      </div>
+  
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- End of navbar -->
+
+  <!-- Start of container -->
+  <div class="center-page">
+  
+    <div id="composition-book">
+      <div class="row">
+        <div class="col-md-10 offset-md-2">
+  
+          <div class="journal-cover">
+            <div class="inside-title">
+              <!-- Insert HandleBars field here -->
+              <p> {{name}}'s Journal</p>
+            </div>
+  
+            <div class="inside-title">
+              Add New Entry
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- End of container -->
+
+  <!-- Start of footer -->
+  <footer class="footer">
+    <div class="two-toned-footer-color"></div>
+    <p class="text-muted text-muted-footer text-center">
+      &copy; Copyright
+    </p>
+  </footer>
+  <!-- End of footer -->
