@@ -1,190 +1,255 @@
-/* --- STYLES FOR ALL PAGES --- */
+/* Custome Fonts */
+@font-face {
+  font-family: "Majestic-Banner-Medium";
+  src: url("/fonts/Majesti-Banner/Majesti-Banner-Medium.otf");
+}
+
+@font-face {
+  font-family: "Fontania";
+  src: url("/fonts/fontania/Fontania.ttf");
+}
+
+html,
 body {
-  /* Typography */
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  display: flex;
-  flex-direction: column;
-  /* Visual */
+  margin: 0;
+  box-sizing: border-box;
 }
 
-html {
-  /* Positioning */
+header {
   position: relative;
+  background-color: black;
+  height: 100vh;
+  /* min-height: 25rem; */
+  width: 100vw;
+  overflow: hidden;
+  /* display: flex;
+  justify-content: center;
+  align-items: flex-start; */
+}
 
-  /* Box-model */
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
   min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 
-/* add space for fixed nav */
-main {
-  margin: 80px 0;
+header .myContainer {
+  position: relative;
+  z-index: 2;
+  margin: 0 !important;
+  height: 100%;
+  width: 100%;
 }
 
-/* create styles for use for all white main boxes */
-.block {
-  background-color: #fff;
-
-  padding: 30px;
-  margin-bottom: 30px;
-}
-
-.block-header {
-  /* Typography */
-  color: #4aaaa5;
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-weight: bold;
-}
-.center-page {
- display: flex;
- background: url(../images/deskbackground.jpg);
- background-size: auto;
- align-items: center;
- justify-content: center;
- padding-top: 20px;
-
- border-top: 10px solid black;
- /* background-repeat: no-repeat; */
-}
-/* NAV START */
-#logo {
-  font-family: Georgia, Times, "Times New Roman", serif;
-
-  /* Typography */
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-
-  /* Visual */
-  background: #4aaaa5;
-}
-
-/* override bootstrap hover color and border */
-.navbar-default .navbar-nav > li > a:hover {
-  color: #4aaaa5;
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
 }
 
 .navbar {
-  background: white;
-  /* border: none; */
- 
+  background-color: transparent !important;
+  width: 100vw;
 }
 
-/* media query for nav background color change */
-@media only screen and (max-width: 767px) {
-  .navbar-header {
-    background-color: #4aaaa5;
-  }
+#logo {
+  width: 5.5em;
+  height: 5.5em;
 }
 
-#composition-book {
-  background-image: url(../images/compositionBook3.jpg);
-  height: 600px;
-  width: 600px;
-  position: relative;
-  background-repeat: no-repeat;
+#navNameApp {
+  font-size: 2em;
+  color: white;
+  font-family: "Fontania";
+  letter-spacing: 0.1em;
 }
 
-.journal-cover {
-  background-color: white;
+/* #letterF,
+#letterO,
+#letterX {
+  margin:0;
+  padding: 0;
+  letter-spacing: -0.1em;
+}
+
+#letterF {
+  color: #feca31;
+}
+
+#letterO {
+  color: #ee522f;
+}
+
+#letterX {
+  color: #802327;
+} */
+
+#navbarNav {
+  position: relative !important;
+  top: -2em !important;
+}
+
+.nav-item {
+  margin-right: 3em;
+}
+
+.fa.fa-home {
+  color: #feca31;
+}
+
+.introMainContent {
+  z-index: 2;
   position: absolute;
-  width: 250px; 
-  top: 40px;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 
-.inside-title{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+#introTitle {
+  text-align: center;
+  font-family: "Majestic-Banner-Medium";
+  color: white;
+  font-size: 5.5em;
 }
 
-/* CONNECT W/ ME CSS */
-.connect-header {
-  /* Typography */
-  font-size: 25px;
+.downArrow {
+  position: absolute;
+  left: 50%;
+  bottom: 25px !important;
+  transform: translate(-50%);
 }
 
+.fa-chevron-circle-down {
+  z-index: 1;
+  color: #feca31;
+  font-size: 55px;
+  padding: 15px;
+}
 
-#images {
-  /* Box-model */
-  padding-top: 15px;
+/* ===================================================== */
+.featuresSection {
+  padding-top: 10em;
+  padding-bottom: 10em;
+}
 
-  /* Typography */
+.features {
+  text-align: center !important;
+  /* margin: 0 1em; */
+}
+
+.features .fas,
+.features .fab {
+  font-size: 4em;
+}
+
+.card {
+  margin: 0 auto !important;
+  border: none;
+}
+
+/* ===================================================== */
+/* .midPage {
+  padding-bottom: 10em;
+} */
+
+.midPageRow {
+  height: 25em;
+}
+
+.midPagePic {
+  padding-left: 0 !important;
+}
+
+.mockUpSection {
   text-align: center;
 }
-/* END CONNECT W/ ME */
 
-
-/* BEGIN FOOTER */
-.footer {
-  /* Positioning */
-  position: absolute;
-  bottom: 0;
-
-  /* Box-model */
-  width: 100%;
-  height: 60px;
-
-  /* Visual */
-  background-color: #666;
+#laptopMockUp {
+  height: 22.5em;
+  width: 28.75em;
 }
 
-.text-muted-footer {
-  /* Box-model */
-  margin-top: 15px;
-
-  /* Typography */
-  color: #fff;
+#encryptionPic {
+  height: 7em;
+  width: 7em;
 }
 
-.two-toned-footer-color {
-  /* Box-model */
-  height: 6px;
-  padding-top: 3px;
+/* ===================================================== */
+.transition {
+  width: 100vw;
+}
 
-  /* Visual */
-  /* background-color: #4aaaa5; */
+/* ===================================================== */
+.about-team {
+  padding-bottom: 10em;
+  padding-top: 2em;
+}
+.ourTeamTitle {
+  text-align: center;
+}
+
+.card-profile {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* .card-avatar {
+  border: 1px sol black;
+  border-radius: 50px;
+} */
+
+.fas.fa-user-tie {
+  font-size: 3em;
+  border: 1px solid black;
+  border-radius: 100px;
+  padding: 15px;
+}
+
+.fab.fa-instagram,
+.fab.fa-github {
+  font-size: 1.5em;
+}
+/* ===================================================== */
+footer {
+  flex-shrink: 0;
+  text-align: center;
   background-color: black;
+  height: 8em;
+  width: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  color: white;
+  font-size: 0.75em;
 }
-/* END FOOTER */
-nav.sections {
-  overflow: hidden;
-  display: block;
-  float: left;
-  width: 82px; height: auto;
-  margin-right: 20px;
-  background: #3bc1f8;
-  box-shadow: 0 1px 1px rgba(78,200,247,.35);
-  border-radius: 5px;
-  text-aling: center;
-}
-  nav.sections li a {
-    display: block;
-    width: 100%; height: 82px;
-  }
-    nav.sections li:hover,
-    nav.sections li.active {
-      background: #00aced;
-      box-shadow: inset 0 1px 1px rgba(0,0,0,.07);
-    }
-    nav.sections li.notes a,
-    nav.sections li.calendar a,
-    nav.sections li.settings a {
-        background: url('http://ysfu.net/sprite.png') no-repeat;
-    }
-    nav.sections li.notes a {
-      background-position: 25px 25px;
-    }
-    nav.sections li.calendar a {
-        background-position: 25px -57px;
-    }
-    nav.sections li.settings a {
-        background-position: 25px -139px;
-    }
 
+footer a {
+  color: #feca31;
+}
+
+footer a:hover {
+  color: #ee522f;
+  text-decoration: none;
+}
+
+footer span {
+  font-size: 1.2em;
+}

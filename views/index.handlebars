@@ -1,33 +1,243 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+<div id="mainWrapper">
+  <header>
+
+    <div class="overlay"></div>
+    <video id="bg_video" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="/videos/JournalVideo.mp4" type="video/mp4">
+    </video>
+
+    <div class="myContainer">
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg nav">
+        <a class="navbar-brand" href="/">
+          <img id="logo" src="/images/transparentLogoFox.png">
+        </a>
+        <h1 id="navNameApp">
+          SECUREFOX
+          {{!-- <span id="letterF">F</span>
+          <span id="letterO">O</span>
+          <span id="letterX">X</span> --}}
+        </h1>
+        {{!-- <a class="navbar-brand" href="/">
+          <img id="logo" src="/images/transparentLogoFox.png">
+          SecureFox
+        </a> --}}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <hr>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <i class="fa fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="introMainContent">
+        <h1 id="introTitle">A Secure Place For Your Memories...</h1>
+      </div>
+      <a href="#surveyForm" class="downArrow"><i class="fas fa-chevron-circle-down arrow"></i></a>
+    </div>
+
+  </header>
+
+  <main>
+    {{!-- Features --}}
+    <div class="container featuresSection">
+      <div class="row">
+
+        <div class="col-4 features">
+          <div class="card" style="width: 18rem;">
+            <i class="fas fa-lock"></i>
+            <div class="card-body">
+              <h5 class="card-title">100% Private</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+        </div>
+
+        <div class="col-4 features">
+          <div class="card" style="width: 18rem;">
+            <i class="fas fa-edit"></i>
+            <div class="card-body">
+              <h5 class="card-title">Customizable</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
           </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+
+        </div>
+
+        <div class="col-4 features">
+          <div class="card" style="width: 18rem;">
+            <i class="fab fa-searchengin"></i>
+            <div class="card-body">
+              <h5 class="card-title">EZ Journal Search</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    {{!-- OneMore --}}
+    <div class="container-fluid midPage">
+      <div class="row midPageRow">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-12 mockUpSection">
+              <img id="laptopMockUp" class="img-fluid" src="/images/laptopMockUp.png" alt="">
+            </div>
+            <div class="col-12 mockUpSection">
+              <img id="encryptionPic" src="/images/256Encryption.png" alt="">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+
+    <div class="transition">
+      <img class="img-fluid" src="/images/transition.png" alt="">
+    </div>
+
+    {{!-- who we are --}}
+    <div class="container">
+
+      <div class="about-team">
+        <div class="row">
+          <div class="col-12 ourTeamTitle">
+            <h2 class="title">Our Team</h2>
+            <h5 class="description">Composed of creative front end and back end developers whose main
+              objective is to create with 100% customer satisfaction in mind.</h5>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card-profile">
+              <div class="card-avatar">
+                {{!-- <img class="img" src="assets/img/jose.jpeg"> --}}
+                <i class="fas fa-user-tie"></i>
+              </div>
+
+              <div class="card-content">
+                <h4 class="card-title">Jose Luis Saboya </h4>
+                <h6 class="category text-muted">Front-End Developer</h6>
+                <div class="footer">
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-github"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card card-profile">
+              <div class="card-avatar">
+                {{!-- <img class="img" src="assets/img/tenzin.jpg"> --}}
+                <i class="fas fa-user-tie"></i>
+              </div>
+
+              <div class="card-content">
+                <h4 class="card-title">Farhan Afzal</h4>
+                <h6 class="category text-muted">Back End Developer</h6>
+                <div class="footer">
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-github"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card card-profile">
+              <div class="card-avatar">
+                {{!-- <img class="img" src="assets/img/eli.jpg"> --}}
+                <i class="fas fa-user-tie"></i>
+              </div>
+
+              <div class="card-content">
+                <h4 class="card-title">Eliezer Vazquez</h4>
+                <h6 class="category text-muted">Front End Developer</h6>
+                <div class="footer">
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-github"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card card-profile">
+              <div class="card-avatar">
+                {{!-- <img class="img" src="assets/img/mafe.jpg"> --}}
+                <i class="fas fa-user-tie"></i>
+              </div>
+
+              <div class="card-content">
+                <h4 class="card-title">Myles Alcala</h4>
+                <h6 class="category text-muted">Back End Developer</h6>
+                <div class="footer">
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-github"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card card-profile">
+              <div class="card-avatar">
+                {{!-- <img class="img" src="assets/img/mafe.jpg"> --}}
+                <i class="fas fa-user-tie"></i>
+              </div>
+
+              <div class="card-content">
+                <h4 class="card-title">Frank Vasquez</h4>
+                <h6 class="category text-muted">Front End Developer</h6>
+                <div class="footer">
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-github"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footerSurvey">
+    <div class="container">
+
+      <p class="footerPartA">
+        <a href="/" target="_blank">Home</a>
+        <span> | </span>
+        <a href="#" target="_blank">Login</a>
+        <span> | </span>
+        <a href="#" target="_blank">SignUp</a>
+      </p>
+    </div>
+    <P class="footerParB">SecureFox &copy; 2019</P>
+  </footer>
+
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
