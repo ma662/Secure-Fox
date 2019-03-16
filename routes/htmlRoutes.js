@@ -32,11 +32,7 @@ module.exports = function(app) {
     
   });
 
-  // Route for signup page
-  app.get("/login2",(req,res) => {
-    res.render("login2");
-    
-  });
+  
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
