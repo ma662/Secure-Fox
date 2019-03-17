@@ -12,6 +12,7 @@ $(window).scroll(function () {
 });
 
 /* After a certain point on the page When scrolling down, hide the navbar. When scrolling up, show the navbar */
+$("#back2Top").hide();
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   let scrollTop = $(window).scrollTop();
@@ -29,3 +30,8 @@ window.onscroll = function () {
     prevScrollpos = currentScrollPos;
   }
 }
+
+// $("#back2Top").click(() => {
+//   $('html, body').animate({scrollTop : 0},800);
+// });
+
