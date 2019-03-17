@@ -2,6 +2,7 @@ var db = require("../models");
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
+
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -27,9 +28,33 @@ module.exports = function(app) {
     
   });
 
+  // app.get("/text",(req,res) => {
+  //   res.render("text");
+    
+  // });
+
+  //log in post 
+  app.post('/login',(req,res,next) =>{
+    
+      passport.authenticate('local',{
+      successRedirect:'/text',
+      failureRedirect:'/login',
+      failureFlash:true
+      })(req,res,next);
+    
+  });
+  // app.post('/login', 
+  // passport.authenticate('local', { failureRedirect: '/login' }),
+  // function(req, res) {
+  //   res.redirect('/');
+  // });
+
+
+
   //register form post
   app.post('/signup',(req,res)=>{
     let errors =[];
+    let msg = [];
     if(req.body.password != req.body.password2){
       errors.push({text:'Password do not match!'})
     }
@@ -46,20 +71,37 @@ module.exports = function(app) {
         password2:req.body.password2
       })
     } else{
-      const newUser = {
-        name:req.body.name,
-        email:req.body.email,
-        password:req.body.password
-      }
-      //hashing the password so it get encrysted before it is saved in the database
-      bcrypt.genSalt(10,(err,salt)=>{
-        bcrypt.hash(newUser.password,salt,(err,hash)=>{
-          if(err) throw err;
-          newUser.password = hash;
-          db.users_tables.create(newUser);
-          res.send('done');
+        //check if email already exists in the db
+        db.users_tables.findOne({where:{email:req.body.email}})
+        .then((users_tables) =>{
+          if(users_tables){
+            errors.push({text:'Email already Registered! Please Login.'})
+            res.render('signup',{
+            errors:errors
+          });
+          //if email doesnt exist, create new account
+          }else{
+              const newUser = {
+              name:req.body.name,
+              email:req.body.email,
+              password:req.body.password
+            }
+            //hashing the password so it get encrysted before it is saved in the database
+                bcrypt.genSalt(10,(err,salt)=>{
+                bcrypt.hash(newUser.password,salt,(err,hash)=>{
+                if(err) throw err;
+                  newUser.password = hash;
+                  db.users_tables.create(newUser);
+                  msg.push({text:'Thanks for Signing Up.Please Log in to Continue.'})
+                  res.render('login', {
+                  msg:msg
+                });
+              });
+            });
+          }
         });
-      });
+
+     
     }
 });
 
