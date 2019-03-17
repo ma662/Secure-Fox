@@ -8,8 +8,8 @@ const session = require('express-session');
 var db = require("./models");
 
 var app = express();
-// var PORT = process.env.PORT || 3000;
-var PORT = 8080;
+var PORT = process.env.PORT || 3000;
+// var PORT = 8080;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -56,24 +56,24 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-// db.sequelize.sync(syncOptions).then(function() {
-//   app.listen(PORT, function() {
-//     console.log(
-//       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-//       PORT,
-//       PORT
-//     );
-//   });
-// });
-
-
-
-
-
-
-
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+db.sequelize.sync(syncOptions).then(function() {
+  app.listen(PORT, function() {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
 });
+
+
+
+
+
+
+
+// app.listen(PORT, function() {
+//   console.log("App listening on PORT " + PORT);
+// });
 
 module.exports = app;
