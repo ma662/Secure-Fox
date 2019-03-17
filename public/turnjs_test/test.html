@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TURN JS TEST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="test.css">
+    
+    <!-- jQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <!-- TurnJS -->
+    <script src="..\js\turnjs4\lib\turn.min.js"></script>
+
+     <!-- Boostrap Stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div id="flipbook">
+                <div class="hard"><img src="../styles/images/green_journal_front.jpg" alt="Test"/></div> 
+                <div class="hard"></div>
+                <div><textarea id="GRAB-ME-FARHAN-AND-USE-ME-GOOD">Example page for typing</textarea></div>
+                <div> Static Entry 2 </div>
+                <div> Static Entry 3 </div>
+                <div> Static Entry 4 </div>
+                <div class="hard"></div>
+                <div class="hard"><img src="../styles/images/green_journal_back.jpg" alt="poop"/></div> 
+        </div>
+    </div>
+</body>
+
+<script>
+    $("#flipbook").turn({
+    width: 1000,
+    height: 640,
+    autoCenter: true
+});
+</script>
+</html>
+
+
+    
+
+
+
