@@ -7,20 +7,19 @@
     </video>
 
     <div class="myContainer">
-      <nav class="navbar navbar-dark bg-dark navbar-expand-lg nav">
-        <a class="navbar-brand" href="/">
-          <img id="logo" src="/images/transparentLogoFox.png">
-        </a>
-        <h1 id="navNameApp">
-          SECUREFOX
-          {{!-- <span id="letterF">F</span>
-          <span id="letterO">O</span>
-          <span id="letterX">X</span> --}}
-        </h1>
-        {{!-- <a class="navbar-brand" href="/">
-          <img id="logo" src="/images/transparentLogoFox.png">
-          SecureFox
-        </a> --}}
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top nav">
+        <div class="fullLogo">
+          <a class="navbar-brand" href="/">
+            <img id="logo" src="/images/transparentLogoFox.png">
+          </a>
+          <div id="navNameApp">
+            <span id="secure">Secure</span>
+            <span id="letterF">F</span>
+            <span id="letterO">o</span>
+            <span id="letterX">x</span>
+          </div>
+        </div>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -44,187 +43,251 @@
         </div>
       </nav>
       <div class="introMainContent">
-        <h1 id="introTitle">A Secure Place For Your Memories...</h1>
+        <h1 id="introTitle">A Secure App For Your Memories</h1>
+        <br>
+        {{!-- Button --}}
+        <div class="col-12 features">
+          <button type="button" class="btn btn-warning">Start Your FREE Journal</button>
+        </div>
       </div>
-      <a href="#surveyForm" class="downArrow"><i class="fas fa-chevron-circle-down arrow"></i></a>
+      <a href="#whyUs" class="downArrow"><i class="fas fa-chevron-circle-down arrow"></i></a>
     </div>
 
   </header>
 
   <main>
-    {{!-- Features --}}
-    <div class="container featuresSection">
+    {{!-- Why SECUREFOX --}}
+    <section id="whyUs" class="container whyUs">
       <div class="row">
+        <div class="col-12">
+          <h2>Why SecureFox?</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="card-text">Whether you're looking for a tool to record your daily emotions and activities in a
+            reflective journal, keep track of milestones or even record your dreams, Secure Fox has you covered.
+            We gives you all the tools you need to focus on the ideas you want to preserve, rather than the process of
+            writing itself.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <div class="col-4 features">
-          <div class="card" style="width: 18rem;">
-            <i class="fas fa-lock"></i>
-            <div class="card-body">
-              <h5 class="card-title">100% Private</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            </div>
+
+    {{!-- Features --}}
+    <section class="featureBgWrapper">
+      <div class="container featureSection">
+
+        <div class="row">
+          <div class="col-12">
+            <h2>Features</h2>
           </div>
         </div>
 
-        <div class="col-4 features">
-          <div class="card" style="width: 18rem;">
-            <i class="fas fa-edit"></i>
-            <div class="card-body">
-              <h5 class="card-title">Customizable</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+        <div class="row">
+          <div class="col-4 features">
+            <div class="card">
+              <i class="fas fa-lock"></i>
+              <div class="card-body">
+                <h4 class="card-title">100% Private</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's
+                  content.</p>
+              </div>
             </div>
           </div>
 
-        </div>
-
-        <div class="col-4 features">
-          <div class="card" style="width: 18rem;">
-            <i class="fab fa-searchengin"></i>
-            <div class="card-body">
-              <h5 class="card-title">EZ Journal Search</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+          <div class="col-4 features">
+            <div class="card">
+              <i class="fas fa-edit"></i>
+              <div class="card-body">
+                <h4 class="card-title">Customizable</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's
+                  content.</p>
+              </div>
             </div>
+
           </div>
 
+          <div class="col-4 features">
+            <div class="card">
+              <i class="fab fa-searchengin"></i>
+              <div class="card-body">
+                <h4 class="card-title">EZ Journal Search</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's
+                  content.</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
+    </section>
+
+
+    {{!-- Privacy --}}
+    <div class="container privacy">
+      <div class="row">
+        <div class="col-6">
+          <br>
+          <h2>Privacy is our #1 Concern</h2>
+          <p class="card-text">
+            Even when carefully kept, paper journals can be read by anyone who happens upon them. Penzu keeps your
+            journals safe with double password protection and military strength encryption so you can rest easy
+            knowing
+            that your entries are secure in the Penzu Vault.
+          </p>
+          <br>
+          <button type="button" class="btn btn-warning">Let's Get Started</button>
+        </div>
+
+        <div class="col-6">
+          <div class="row">
+            <div class="col-12">
+              <div class="row">
+                <div class="col-12 mockUpSection">
+                  <img id="laptopMockUp" class="img-fluid" src="/images/laptopMockUp.png" alt="">
+                </div>
+                <div class="col-12 mockUpSection">
+                  <img id="encryptionPic" src="/images/256Encryption.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     {{!-- OneMore --}}
-    <div class="container-fluid midPage">
-      <div class="row midPageRow">
-        <div class="col-12">
-          <div class="row">
-            <div class="col-12 mockUpSection">
-              <img id="laptopMockUp" class="img-fluid" src="/images/laptopMockUp.png" alt="">
-            </div>
-            <div class="col-12 mockUpSection">
-              <img id="encryptionPic" src="/images/256Encryption.png" alt="">
-            </div>
-          </div>
+    <section class="container testimonial">
+      <div class="row">
+        <div class="col-4">
+          <article>
+            <h2>Testimonials</h2>
+            <p>
+              "Secure Fox is very secure when it comes to privacy, having AES 256 BIT encryption technology is a
+              driffrent
+              and unique way of keeping my things secure" <br> - Frank
+            </p>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="transition">
-      <img class="img-fluid" src="/images/transition.png" alt="">
-    </div>
+
 
     {{!-- who we are --}}
-    <div class="container">
+    <section class="teamWrapper">
 
       <div class="about-team">
-        <div class="row">
-          <div class="col-12 ourTeamTitle">
-            <h2 class="title">Our Team</h2>
-            <h5 class="description">Composed of creative front end and back end developers whose main
-              objective is to create with 100% customer satisfaction in mind.</h5>
-          </div>
+        <div class="col-12 ourTeamTitle">
+          <h2 class="title">Our Team</h2>
+          <p class="description">Composed of creative front end and back end developers<br>whose main
+            objective is to create with 100% customer satisfaction in mind.</p>
         </div>
-
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card card-profile">
-              <div class="card-avatar">
-                {{!-- <img class="img" src="assets/img/jose.jpeg"> --}}
-                <i class="fas fa-user-tie"></i>
-              </div>
-
-              <div class="card-content">
-                <h4 class="card-title">Jose Luis Saboya </h4>
-                <h6 class="category text-muted">Front-End Developer</h6>
-                <div class="footer">
-                  <i class="fab fa-instagram"></i>
-                  <i class="fab fa-github"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card card-profile">
-              <div class="card-avatar">
-                {{!-- <img class="img" src="assets/img/tenzin.jpg"> --}}
-                <i class="fas fa-user-tie"></i>
-              </div>
-
-              <div class="card-content">
-                <h4 class="card-title">Farhan Afzal</h4>
-                <h6 class="category text-muted">Back End Developer</h6>
-                <div class="footer">
-                  <i class="fab fa-instagram"></i>
-                  <i class="fab fa-github"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card card-profile">
-              <div class="card-avatar">
-                {{!-- <img class="img" src="assets/img/eli.jpg"> --}}
-                <i class="fas fa-user-tie"></i>
-              </div>
-
-              <div class="card-content">
-                <h4 class="card-title">Eliezer Vazquez</h4>
-                <h6 class="category text-muted">Front End Developer</h6>
-                <div class="footer">
-                  <i class="fab fa-instagram"></i>
-                  <i class="fab fa-github"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card card-profile">
-              <div class="card-avatar">
-                {{!-- <img class="img" src="assets/img/mafe.jpg"> --}}
-                <i class="fas fa-user-tie"></i>
-              </div>
-
-              <div class="card-content">
-                <h4 class="card-title">Myles Alcala</h4>
-                <h6 class="category text-muted">Back End Developer</h6>
-                <div class="footer">
-                  <i class="fab fa-instagram"></i>
-                  <i class="fab fa-github"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="card card-profile">
-              <div class="card-avatar">
-                {{!-- <img class="img" src="assets/img/mafe.jpg"> --}}
-                <i class="fas fa-user-tie"></i>
-              </div>
-
-              <div class="card-content">
-                <h4 class="card-title">Frank Vasquez</h4>
-                <h6 class="category text-muted">Front End Developer</h6>
-                <div class="footer">
-                  <i class="fab fa-instagram"></i>
-                  <i class="fab fa-github"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
+
+      <div class="teamContainer">
+        <div class="teamMember">
+          <div class="card card-profile">
+            <div class="card-avatar">
+              {{!-- <img class="img" src="assets/img/tenzin.jpg"> --}}
+              <i class="fas fa-user-tie"></i>
+            </div>
+
+            <div class="card-content">
+              <h4 class="card-title">Jose L Saboya</h4>
+              <h6>Front End Developer</h6>
+              <div class="footer">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="teamMember">
+          <div class="card card-profile">
+            <div class="card-avatar">
+              {{!-- <img class="img" src="assets/img/tenzin.jpg"> --}}
+              <i class="fas fa-user-tie"></i>
+            </div>
+
+            <div class="card-content">
+              <h4 class="card-title">Farhan Afzal</h4>
+              <h6>Back End Developer</h6>
+              <div class="footer">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="teamMember">
+          <div class="card card-profile">
+            <div class="card-avatar">
+              {{!-- <img class="img" src="assets/img/eli.jpg"> --}}
+              <i class="fas fa-user-tie"></i>
+            </div>
+
+            <div class="card-content">
+              <h4 class="card-title">Eliezer Vazquez</h4>
+              <h6>Front End Developer</h6>
+              <div class="footer">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="teamMember">
+          <div class="card card-profile">
+            <div class="card-avatar">
+              {{!-- <img class="img" src="assets/img/mafe.jpg"> --}}
+              <i class="fas fa-user-tie"></i>
+            </div>
+
+            <div class="card-content">
+              <h4 class="card-title">Myles Alcala</h4>
+              <h6>Back End Developer</h6>
+              <div class="footer">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="teamMember">
+          <div class="card card-profile">
+            <div class="card-avatar">
+              {{!-- <img class="img" src="assets/img/mafe.jpg"> --}}
+              <i class="fas fa-user-tie"></i>
+            </div>
+
+            <div class="card-content">
+              <h4 class="card-title">Frank Vasquez</h4>
+              <h6>Front End Developer</h6>
+              <div class="footer">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
   </main>
 
-  <footer class="footerSurvey">
+  <footer>
     <div class="container">
 
       <p class="footerPartA">
@@ -234,10 +297,16 @@
         <span> | </span>
         <a href="#" target="_blank">SignUp</a>
       </p>
+      <P class="footerParB">SecureFox &copy; 2019</P>
     </div>
-    <P class="footerParB">SecureFox &copy; 2019</P>
   </footer>
+
+  <div id="back2Top">
+    <a href=”#” class=”back-to-top”>
+      <i class="fas fa-angle-double-up"></i>
+    </a>
+  </div>
 
 </div>
 
-<script src="/js/index.js"></script>
+<script src="/js/navbar.js"></script>

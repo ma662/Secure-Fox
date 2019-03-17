@@ -1,18 +1,25 @@
 /* Custome Fonts */
 @font-face {
-  font-family: "Majestic-Banner-Medium";
-  src: url("/fonts/Majesti-Banner/Majesti-Banner-Medium.otf");
-}
-
-@font-face {
   font-family: "Fontania";
   src: url("/fonts/fontania/Fontania.ttf");
 }
+
+/* @import url('https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei'); */
 
 html,
 body {
   margin: 0;
   box-sizing: border-box;
+}
+
+h2 {
+  margin-bottom: 1.5em;
+  font-family: 'Fontania', sans-serif;
+}
+
+P {
+  font-size: 1.3em;
+  line-height: 2em;
 }
 
 header {
@@ -66,24 +73,46 @@ header .overlay {
   width: 100vw;
 }
 
+.navbar {
+  /* position: fixed; */
+  width: 100vw;
+  padding: 0.8em;
+  background-color: transparent !important;
+  transition: background-color 0.5s linear;
+  transition: top 0.3s;
+  /* margin-bottom: -60px;  */
+}
+
+.nav-solid {
+  background-color: #000000 !important;
+  position: fixed;
+}
+.fullLogo {
+  display: flex;
+  align-items: center;
+}
+
 #logo {
-  width: 5.5em;
-  height: 5.5em;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 #navNameApp {
-  font-size: 2em;
+  font-size: 1.75em;
   color: white;
-  font-family: "Fontania";
-  letter-spacing: 0.1em;
+  font-family: 'ZCOOL XiaoWei', serif;
+  /* letter-spacing: 2PX; */
 }
 
-/* #letterF,
+#secure {
+  margin-right: -2px;
+}
+
+#letterF,
 #letterO,
 #letterX {
-  margin:0;
+  margin: 0px -4px;
   padding: 0;
-  letter-spacing: -0.1em;
 }
 
 #letterF {
@@ -96,19 +125,14 @@ header .overlay {
 
 #letterX {
   color: #802327;
-} */
-
-#navbarNav {
-  position: relative !important;
-  top: -2em !important;
 }
 
-.nav-item {
+.nav-item:not(:last-child) {
   margin-right: 3em;
 }
 
 .fa.fa-home {
-  color: #feca31;
+  color: #fdc02f;
 }
 
 .introMainContent {
@@ -124,7 +148,9 @@ header .overlay {
 
 #introTitle {
   text-align: center;
-  font-family: "Majestic-Banner-Medium";
+  font-family: 'Fontania', sans-serif;
+  /* font-family: 'Varela Round', sans-serif; */
+  /* font-weight: 200; */
   color: white;
   font-size: 5.5em;
 }
@@ -136,27 +162,47 @@ header .overlay {
   transform: translate(-50%);
 }
 
-.fa-chevron-circle-down {
-  z-index: 1;
-  color: #feca31;
+.fa-chevron-circle-down,
+.fa-angle-double-up {
+  color: #fdc02f;
   font-size: 55px;
   padding: 15px;
 }
 
 /* ===================================================== */
-.featuresSection {
-  padding-top: 10em;
-  padding-bottom: 10em;
+.whyUs {
+  margin: 0 auto;
+  padding: 5em 2em 2.5em 2em;
+  text-align: center;
+}
+
+/* ===================================================== */
+#signUp {
+  width: 75%;
+  border-radius: 15%;
+}
+
+/* ===================================================== */
+.featureBgWrapper{
+  margin: 0;
+  padding: 0;
+  background-image: url(/images/transition.png);
+}
+
+.featureSection {
+  text-align: center;
+  margin: 0 auto;
+  padding: 5.5em 2em 8.5em 2em;
 }
 
 .features {
   text-align: center !important;
-  /* margin: 0 1em; */
 }
 
 .features .fas,
 .features .fab {
   font-size: 4em;
+  color: #fdc02f;
 }
 
 .card {
@@ -165,16 +211,21 @@ header .overlay {
 }
 
 /* ===================================================== */
-/* .midPage {
-  padding-bottom: 10em;
-} */
-
-.midPageRow {
-  height: 25em;
+.privacy {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2.5em 2em 2.5em 2em;
 }
 
-.midPagePic {
-  padding-left: 0 !important;
+.privacy img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+/* ===================================================== */
+.midPage {
+  padding-bottom: 6em;
 }
 
 .mockUpSection {
@@ -192,22 +243,49 @@ header .overlay {
 }
 
 /* ===================================================== */
-.transition {
-  width: 100vw;
+.testimonial {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.testimonial .row {
+  justify-content: center;
+  text-align: center;
 }
 
 /* ===================================================== */
+.teamWrapper {
+  background-image: url(/images/abstract.png);
+  background-size: cover;
+  box-shadow: inset 0 0 10em 15em rgba(0, 0, 0, 0.5);
+}
+
+.teamWrapper h2,
+.teamWrapper p {
+  color: white;
+}
+
 .about-team {
-  padding-bottom: 10em;
+  padding-bottom: 4em;
   padding-top: 2em;
 }
+
 .ourTeamTitle {
   text-align: center;
+}
+
+.teamContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 12em;
 }
 
 .card-profile {
   text-align: center;
   margin: 0 auto;
+  background-color: transparent;
+  color: white;
 }
 
 /* .card-avatar {
@@ -217,7 +295,7 @@ header .overlay {
 
 .fas.fa-user-tie {
   font-size: 3em;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 100px;
   padding: 15px;
 }
@@ -226,9 +304,14 @@ header .overlay {
 .fab.fa-github {
   font-size: 1.5em;
 }
+
 /* ===================================================== */
 footer {
-  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* flex-shrink: 0; */
   text-align: center;
   background-color: black;
   height: 8em;
@@ -236,7 +319,7 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 3em;
   color: white;
   font-size: 0.75em;
 }
@@ -252,4 +335,18 @@ footer a:hover {
 
 footer span {
   font-size: 1.2em;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+/* ===================================================== */
+#back2Top {
+  display: block;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 4em;
+  right: 50%;
+  transform: translateX(-50%)
 }
