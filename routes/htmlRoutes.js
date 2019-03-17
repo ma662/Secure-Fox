@@ -18,9 +18,13 @@ app.get("/home", function(req, res) {
 
   //Send the user object to the index.handlebars file.
   res.render("home", {
+
+    var currentUser = json.parse(foxUser);
+
+
     title: "Secure Fox",
     // Need to pass object to handlebars
-    name:  "Current User"
+    name:  currentUser.name
   });
 });
 }
