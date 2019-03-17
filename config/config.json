@@ -1,4 +1,11 @@
 {
+  "myles": {
+    "username": "root",
+    "password": "root",
+    "database":"exampledb",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
   "development": {
     "username": "root",
     "password": null,
