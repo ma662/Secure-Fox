@@ -45,7 +45,8 @@ module.exports = function(app) {
   // });
   app.post('/login', 
   passport.authenticate('local',
-   { failureRedirect: '/login',failureFlash:true}),
+   { failureRedirect: '/login',failureFlash:'Bad Login!'}),
+   
   function(req, res,next) {
     
    res.render('text');
@@ -112,7 +113,12 @@ module.exports = function(app) {
     res.render("404");
   });
 
-  
+  // Route adding posts
+    app.get("/allposts/add",(req,res) => {
+    res.render("login");
+    
+  });
+
 
 
 
