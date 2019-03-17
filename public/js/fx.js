@@ -13,15 +13,19 @@ $(window).scroll(function () {
 
 /* After a certain point on the page When scrolling down, hide the navbar. When scrolling up, show the navbar */
 var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
+window.onscroll = function () {
   let scrollTop = $(window).scrollTop();
   let currentScrollPos = window.pageYOffset;
-  if (scrollTop >= 790) {
+  if (scrollTop < 790) {
+    $("#back2Top").hide();
+  } else if (scrollTop >= 790) {
     if (prevScrollpos > currentScrollPos) {
       $(".navbar").css("top", "0");
+      $("#back2Top").fadeOut();
     } else {
-      $(".navbar").css("top", "-8em") ;
+      $(".navbar").css("top", "-8em");
+      $("#back2Top").fadeIn();
     }
     prevScrollpos = currentScrollPos;
-  } 
+  }
 }
