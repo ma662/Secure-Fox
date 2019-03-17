@@ -34,20 +34,22 @@ module.exports = function(app) {
   // });
 
   //log in post 
-  app.post('/login',(req,res,next) =>{
+  // app.post('/login',(req,res,next) =>{
     
-      passport.authenticate('local',{
-      successRedirect:'/text',
-      failureRedirect:'/login',
-      failureFlash:true
-      })(req,res,next);
+  //     passport.authenticate('local',{
+  //     successRedirect:'/text',
+  //     failureRedirect:'/login',
+  //     failureFlash:true
+  //     })(req,res,next);
     
-  });
-  // app.post('/login', 
-  // passport.authenticate('local', { failureRedirect: '/login' }),
-  // function(req, res) {
-  //   res.redirect('/');
   // });
+  app.post('/login', 
+  passport.authenticate('local',
+   { failureRedirect: '/login',failureFlash:true}),
+  function(req, res,next) {
+    
+   res.render('text');
+  });
 
 
 
