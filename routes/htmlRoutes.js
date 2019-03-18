@@ -6,9 +6,7 @@ const passport = require('passport');
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    
       res.render("index")
-    
   });
 
   // Load example page and pass in an example by id
@@ -19,7 +17,6 @@ module.exports = function(app) {
   // Route for signup page
   app.get("/signup",(req,res) => {
     res.render("signup");
-    
   });
 
   // Route for signup page
@@ -51,12 +48,9 @@ module.exports = function(app) {
   passport.authenticate('local',
    { failureRedirect: '/login',failureFlash:'Bad Login!'}),
    
-  function(req, res,next) {
-    
+  function(req, res,next) {    
    res.render('home');
   });
-
-
 
   //register form post
   app.post('/signup',(req,res)=>{
@@ -122,10 +116,4 @@ module.exports = function(app) {
     res.render("login");
     
   });
-
-
-
-
 };
-
- 

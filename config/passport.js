@@ -2,8 +2,6 @@ const localStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 const db = require("../models");
 
-
-
 //local strategy
 module.exports = function(passport){
    
@@ -13,7 +11,8 @@ module.exports = function(passport){
         db.users_tables.findOne({
            where:{email:email} 
         }).then((user) =>{
-            if(!user){
+            // user.preventDefault();
+            if(typeof user != String){
                 return done(null, false,{message:'No User Found!'});
 
             }
