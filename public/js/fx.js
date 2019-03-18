@@ -2,7 +2,7 @@
 $(window).scroll(function() {
   let height = $(".navbar").height();
   let scrollTop = $(window).scrollTop();
-  if (scrollTop >= height + 200) {
+  if (scrollTop >= height + 190) {
     // makes the navbar solid
     $(".navbar").addClass("nav-solid");
   } else {
