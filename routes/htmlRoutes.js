@@ -22,8 +22,8 @@ module.exports = function(app) {
       failureRedirect: "/login",
       failureFlash: "Bad Login!"
     }),
-    function(req, res) {
-      res.render("home");
+    (req, res) => {
+      return res.render("home");
     }
   );
 
@@ -70,7 +70,7 @@ module.exports = function(app) {
               newUser.password = hash;
               db.User.create(newUser);
               msg.push({
-                text: "Thanks for Signing Up.Please Log in to Continue."
+                text: "Thanks for Signing Up. Please Log in to Continue."
               });
               res.render("login", {
                 msg: msg
