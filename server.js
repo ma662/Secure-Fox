@@ -1,9 +1,9 @@
 require("dotenv").config();
 const express = require("express");
 const exphbs = require("express-handlebars");
-const passport = require('passport');
-const flash = require('connect-flash');
-const session = require('express-session');
+const passport = require("passport");
+const flash = require("connect-flash");
+const session = require("express-session");
 
 var db = require("./models");
 
@@ -19,7 +19,7 @@ app.use(express.static("public"));
 
 // Express session midleware
 app.use(session({
-  secret: 'secret',
+  secret: "secret",
   resave: true,
   saveUninitialized: true,
 }));
@@ -44,7 +44,7 @@ require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 //passport config
-require('./config/passport')(passport);
+require("./config/passport")(passport);
 
 
 var syncOptions = { force: false };
