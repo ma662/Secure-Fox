@@ -68,7 +68,7 @@ module.exports = function(app) {
                 throw err;
               }
               newUser.password = hash;
-              db.users_tables.create(newUser);
+              db.User.create(newUser);
               msg.push({
                 text: "Thanks for Signing Up.Please Log in to Continue."
               });

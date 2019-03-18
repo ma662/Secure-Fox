@@ -9,7 +9,7 @@ var basename = path.basename(module.filename);
 // Working - probably yours Farhan
 // var env = process.env.NODE_ENV || "development";
 
-var env = process.env.NODE_ENV || "myles";
+var env = process.env.NODE_ENV;
 // ===========================================
 
 var config = require(__dirname + "/../config/config.json")[env];

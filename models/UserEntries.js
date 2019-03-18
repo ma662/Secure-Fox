@@ -7,7 +7,7 @@ module.exports = function(sequelize) {
         allowNull: false
       }
     });
-    UserEntries.belongsTo(models.JournalEntries, {
+    UserEntries.belongsTo(models.JournalEntry, {
       foreignKey: {
         allowNull: false
       }
