@@ -8,6 +8,8 @@ background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
 font-family: 'Numans', sans-serif;
+box-sizing: border-box;
+
 }
 
 .container{
@@ -16,6 +18,7 @@ align-content: center;
 }
 
 .card{
+margin: 0 auto !important;
 height: 370px;
 margin-top: auto;
 margin-bottom: auto;
