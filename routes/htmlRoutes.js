@@ -67,7 +67,7 @@ module.exports = function (app) {
       db.users_tables.findOne({ where: { email: req.body.email } })
         .then((users_tables) => {
           if (users_tables) {
-            errors.push({ text: "Email already Registered! Please Login." })
+            errors.push({ text: "Email already Registered! Please Login." });
             res.render("signup", {
               errors: errors
             });
@@ -77,14 +77,19 @@ module.exports = function (app) {
               name: req.body.name,
               email: req.body.email,
               password: req.body.password
-            }
+            };
             //hashing the password so it get encrysted before it is saved in the database
             bcrypt.genSalt(10, (err, salt) => {
               bcrypt.hash(newUser.password, salt, (err, hash) => {
-                if (err) throw err;
+                if (err) {
+                  throw err;
+                }
+
                 newUser.password = hash;
                 db.users_tables.create(newUser);
-                msg.push({ text: "Thanks for Signing Up.Please Log in to Continue." })
+                msg.push({
+                  text: "Thanks for Signing Up.Please Log in to Continue."
+                });
                 res.render("login", {
                   msg: msg
                 });
@@ -92,20 +97,16 @@ module.exports = function (app) {
             });
           }
         });
-
-
     }
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
+  app.get("*", function(req, res) {
     res.render("404");
   });
 
   // Route adding posts
   app.get("/allposts/add", (req, res) => {
     res.render("login");
-
   });
-
 };
