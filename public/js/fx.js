@@ -32,6 +32,6 @@ window.onscroll = function () {
 }
 
 // $("#back2Top").click(() => {
-//   $('html, body').animate({scrollTop : 0},800);
+//   $("html, body").animate({scrollTop : 0},800);
 // });
 
