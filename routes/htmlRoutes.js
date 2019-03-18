@@ -6,12 +6,16 @@ const passport = require('passport');
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
-    res.render("index");
+    return res.render("index");
   });
 
-  // app.get("/home",(req,res) => {
-  //   res.render("home");
-  // });
+  app.get("/signup",(req,res) => {
+    return res.render("signup");
+  });
+
+  app.get("/login",(req,res) => {
+    return res.render("login");
+  });
 
   // app.get("/text",(req,res) => {
   //   res.render("text");
