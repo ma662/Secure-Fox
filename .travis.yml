@@ -7,4 +7,6 @@ cache:
   directories:
     - node_modules
 before_install:
-  - mysql -e 'CREATE DATABASE testdb;'
+  - mysql -e 'CREATE DATABASE test_db;'
+env:
+  - NODE_ENV=myles
