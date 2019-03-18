@@ -3,29 +3,10 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-    
-      res.render("index")
-    
-  });
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-      res.render("example")
-  });
-
-  // Route for signup page
-  app.get("/signup",(req,res) => {
-    res.render("signup");
-    
-  });
-
-  // Route for signup page
-  app.get("/login",(req,res) => {
-    res.render("login");
-    
+  app.get("/", function (req, res) {
+    res.render("index");
   });
 
   // app.get("/home",(req,res) => {
@@ -113,7 +94,7 @@ module.exports = function(app) {
 });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 
@@ -123,9 +104,4 @@ module.exports = function(app) {
     
   });
 
-
-
-
 };
-
- 

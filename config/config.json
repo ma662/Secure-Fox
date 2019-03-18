@@ -2,21 +2,21 @@
   "myles": {
     "username": "root",
     "password": "root",
-    "database":"exampledb",
+    "database":"journal_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "exampledb",
+    "password": "",
+    "database": "journal_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "root",
-    "database": "exampledb",
+    "database": "journal_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
