@@ -188,6 +188,7 @@ textarea {
   padding-top: 2em;
   padding-left: 3em;
   word-wrap: break-word;
+  outline:none;
 }
 
 .paper {
