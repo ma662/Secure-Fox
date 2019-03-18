@@ -22,32 +22,10 @@ module.exports = function(app) {
     
   });
 
-<<<<<<< HEAD
-  //Next 6 lines are just test data
-  var foxUser = [
-    {
-      userID: "jsmith161",
-      name: "Pedro Smith"
-    }
-  ];
-  // Handlebars requires an object to be sent to the handlebars file.
-  // User must be set as an object
-
-  //Send the user object to the index.handlebars file.
-  res.render("home", {
-
-    var currentUser = json.parse(foxUser);
-
-
-    title: "Secure Fox",
-    // Need to pass object to handlebars
-    name:  currentUser.name
-=======
   // Route for signup page
   app.get("/login",(req,res) => {
     res.render("login");
     
->>>>>>> origin/master
   });
 
   // app.get("/home",(req,res) => {
