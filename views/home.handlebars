@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/styles/css/home.css" media="screen" title="no title" charset="utf-8">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
 
@@ -6,8 +7,9 @@
       Calendar
     </div>
     <div>
-      <!-- Logo to be added-->
-      Logo
+      <a class="navbar-brand" href="/">
+        <img id="logo" src="/images/transparentLogoFox.png">
+      </a>
     </div>
 
     <!-- Button on top right of screen with user name, which needs to be filled in from HandleBars template -->
@@ -32,35 +34,37 @@
 <!-- Start of container -->
 <div class="center-page">
 
-    <div class="container">
-        <div id="flipbook">
-                <div class="hard"><img src="../styles/images/green_journal_front.jpg" alt="Test"/></div> 
-                <div class="hard"></div>
-                <div><textarea>Example page for typing. Need to style this later.</textarea></div>
-                <div> Static Entry 2 </div>
-                <div> Static Entry 3 </div>
-                <div> Static Entry 4 </div>
-                <div class="hard"></div>
-                <div class="hard"><img src="../styles/images/green_journal_back.jpg" alt="Test"/></div> 
-        </div>
-
-        <script>
-          $("#flipbook").turn({
-            width: 1000,
-            height: 640,
-            autoCenter: true
-          });
-        </script>
+  <div class="container">
+    <div id="flipbook" align="center">
+      <div class="hard">My Journal<img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
+      <div class="hard"></div>
+      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
+      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="rev-paper"/></div>
+      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
+      <div> Static Entry 4 </div>
+      <div class="hard"></div>
+      <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
     </div>
+
+    <script>
+      $("#flipbook").turn({
+        width: 900,
+        height: 640,
+        autoCenter: true
+      });
+    </script>
+  </div>
 
 </div>
 <!-- End of container -->
 
 <!-- Start of footer -->
+
 <footer class="footer">
   <div class="two-toned-footer-color"></div>
   <p class="text-muted text-muted-footer text-center">
     &copy; Copyright
   </p>
 </footer>
+
 <!-- End of footer -->
