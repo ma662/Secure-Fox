@@ -1,5 +1,5 @@
 // responsive navbar (changes color on scrolling)
-$(window).scroll(function () {
+$(window).scroll(function() {
   let height = $(".navbar").height();
   let scrollTop = $(window).scrollTop();
   if (scrollTop >= height) {
@@ -14,7 +14,7 @@ $(window).scroll(function () {
 /* After a certain point on the page When scrolling down, hide the navbar. When scrolling up, show the navbar */
 $("#back2Top").hide();
 var prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
+window.onscroll = function() {
   let scrollTop = $(window).scrollTop();
   let currentScrollPos = window.pageYOffset;
   if (scrollTop < 790) {
@@ -29,9 +29,8 @@ window.onscroll = function () {
     }
     prevScrollpos = currentScrollPos;
   }
-}
+};
 
 // $("#back2Top").click(() => {
-//   $('html, body').animate({scrollTop : 0},800);
+//   $("html, body").animate({scrollTop : 0},800);
 // });
-

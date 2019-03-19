@@ -252,7 +252,13 @@ header .overlay {
 }
 
 .testimonial .row {
-  justify-content: center;
+  /* justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  border-style: solid;
+  border-width: 2px; */
+
   text-align: center;
 }
 
@@ -362,8 +368,43 @@ footer p {
   animation: pulse 2s infinite; 
 }
 
+/* END FOOTER */
+nav.sections {
+  display: block;
+  float: left;
+  width: 82px; height: auto;
+  margin-right: 20px;
+  background: #3bc1f8;
+  box-shadow: 0 1px 1px rgba(78,200,247,.35);
+  border-radius: 5px;
+  text-align: center;
+}
+  nav.sections li a {
+    display: block;
+    width: 100%; height: 82px;
+  }
+    nav.sections li:hover,
+    nav.sections li.active {
+      background: #00aced;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.07);
+    }
+    nav.sections li.notes a,
+    nav.sections li.calendar a,
+    nav.sections li.settings a {
+        background: url('http://ysfu.net/sprite.png') no-repeat;
+    }
+    nav.sections li.notes a {
+      background-position: 25px 25px;
+    }
+    nav.sections li.calendar a {
+        background-position: 25px -57px;
+    }
+    nav.sections li.settings a {
+        background-position: 25px -139px;
+    }
+
 /* ===================================================== */
-@-webkit-keyframes pulse {
+@keyframes pulse {
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
   }

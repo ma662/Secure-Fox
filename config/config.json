@@ -1,7 +1,14 @@
 {
+  "myles": {
+    "username": "root",
+    "password": "root",
+    "database":"journal_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
   "development": {
     "username": "root",
-    "password": "",
+    "password": "root",
     "database": "journal_db",
     "host": "localhost",
     "dialect": "mysql"
@@ -9,13 +16,13 @@
   "test": {
     "username": "root",
     "password": "root",
-    "database": "journal_db",
+    "database": "test_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
   },
   "production": {
-    "use_env_variable": "mysql://ic7aydretlncui0j:fxbroeixylszojf2@d13xat1hwxt21t45.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lzy2h93232kh865t",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
