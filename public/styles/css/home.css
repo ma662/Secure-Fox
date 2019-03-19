@@ -57,12 +57,8 @@ main {
 }
 /* NAV START */
 #logo {
-  font-family: Georgia, Times, "Times New Roman", serif;
-
-  /* Typography */
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 /* override bootstrap hover color and border */
