@@ -82,6 +82,11 @@ module.exports = function(app) {
     }
   });
 
+  app.get("/logout", function(req, res) {
+    req.logout();
+    return res.redirect("/");
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
