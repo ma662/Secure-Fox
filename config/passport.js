@@ -20,6 +20,7 @@ module.exports = function(passport){
             //match password
             bcrypt.compare(password,user.password,(err,isMatch) =>{
                 if(err) throw err;
+                console.log(err)
                 if(isMatch){
                     // console.log(user);
                     return done(null,user);
@@ -38,11 +39,22 @@ module.exports = function(passport){
     });
 
     //deserliazie passport cookie
-    passport.deserializeUser(function(id,done){
-        db.users_tables.findByPk(id,function(err,user){
-            done(err,user)
-        });
-    });
-
+    // passport.deserializeUser(function(id,done){
+    //     db.users_tables.findByPk(id,function(err,user){
+    //         done(err,user)
+    //     });
+    // });
+    // when we retrieve the data from a user session
+    passport.deserializeUser(function(id, done) {
+    db.User.findOne({ where: {id: id }})
+    .then(function (user) {
+        done(null, user);
+    })
+    .catch(error => {
+        console.log(error);
+        done(error, false);
+    })
+    ;
+  });
 
 }
