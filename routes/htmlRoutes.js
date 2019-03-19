@@ -28,9 +28,9 @@ module.exports = function(app) {
     
   });
 
-  // app.get("/home",(req,res) => {
-  //   res.render("home");
-  // });
+  app.get("/home",(req,res) => {
+    res.render("home");
+  });
 
   // app.get("/text",(req,res) => {
   //   res.render("text");

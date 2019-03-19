@@ -11,8 +11,8 @@ body{
     width:1000px;
     height:640px;
     background-color:white;
-    line-height:300px;
-    font-size:20px;
+    /* line-height:300px; */
+    /* font-size:20px; */
     text-align:center;
 }
 
@@ -32,7 +32,7 @@ body{
     -o-box-shadow:inset 0 0 5px #666;
     -ms-box-shadow:inset 0 0 5px #666;
     box-shadow:inset 0 0 5px #666;
-    font-weight:bold;
+    /* font-weight:bold; */
 }
 
 #flipbook .odd{
@@ -62,4 +62,16 @@ body{
     -o-box-shadow:inset 0 0 5px #666;
     -ms-box-shadow:inset 0 0 5px #666;
     box-shadow:inset 0 0 5px #666;
+}
+
+.entry-box{
+	width: 600px;
+	/* height: 120px; */
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+    background-repeat: no-repeat;
+    line-height: 1.5em;
 }

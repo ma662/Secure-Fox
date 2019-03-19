@@ -16,6 +16,7 @@
         aria-haspopup="true" aria-expanded="false">
         {{name}}
       </button>
+
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="#">Account Settings</a>
         <a class="dropdown-item" href="#">Help &amp; FAQ</a>
@@ -36,7 +37,10 @@
         <div id="flipbook">
                 <div class="hard"><img src="../styles/images/green_journal_front.jpg" alt="Test"/></div> 
                 <div class="hard"></div>
-                <div><textarea>Example page for typing. Need to style this later.</textarea></div>
+                <div><textarea cols=40 rows=20 name="styled-textarea" id="entry-box" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')">
+                  What would you like to say today...</textarea>
+                </div>
+                {{!-- <div><textarea id="entry-box">Example page for typing. Need to style this later.</textarea></div> --}}
                 <div> Static Entry 2 </div>
                 <div> Static Entry 3 </div>
                 <div> Static Entry 4 </div>
@@ -50,6 +54,12 @@
             height: 640,
             autoCenter: true
           });
+
+ 
+            function setbg(color)
+              {
+              document.getElementById("entry-box").style.background=color
+              }
         </script>
     </div>
 
