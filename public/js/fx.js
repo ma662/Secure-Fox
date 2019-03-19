@@ -2,7 +2,7 @@
 $(window).scroll(function () {
   let height = $(".navbar").height();
   let scrollTop = $(window).scrollTop();
-  if (scrollTop >= height + 200) {
+  if (scrollTop >= height) {
     // makes the navbar solid
     $(".navbar").addClass("nav-solid");
   } else {
@@ -19,12 +19,12 @@ window.onscroll = function () {
   let currentScrollPos = window.pageYOffset;
   if (scrollTop < 790) {
     $("#back2Top").hide();
-  } else if (scrollTop >= 790) {
-    if (prevScrollpos > currentScrollPos) {
-      $(".navbar").css("top", "0");
+  } else if (scrollTop >= 1090) {
+    if (prevScrollpos >=currentScrollPos) {
+      $(".navbar").css("top", "0").fadeIn(500);
       $("#back2Top").fadeOut();
     } else {
-      $(".navbar").css("top", "-8em");
+      $(".navbar").fadeOut(500);
       $("#back2Top").fadeIn();
     }
     prevScrollpos = currentScrollPos;
