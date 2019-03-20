@@ -17,7 +17,7 @@
 
 
 <script>
-  var keys = require("../js/keys.js");
+  // var keys = require("../js/keys.js");
 
   var magicWeatherButton = $("<button>");
     magicWeatherButton.text("WEATHER API TIME BABY");
@@ -26,6 +26,11 @@
     magicWeatherButton.on("click", function() {
       if (navigator.geolocation) {
         return navigator.geolocation.getCurrentPosition(showPosition);
+
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+
+        // call route through ajax /api/weather
       } else { 
         return alert("Geolocation is not supported by this browser.");
       }    
@@ -46,7 +51,7 @@
 
   function weatherTime(latitutde, longitude) {
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitutde + "&lon=" + longitude + "&appid=" + ("key goes here");    
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitutde + "&lon=" + longitude + "&appid=" + "HIDDEN" + "&units=imperial";    
 
     // Function to call Geocoding results
     $.ajax({

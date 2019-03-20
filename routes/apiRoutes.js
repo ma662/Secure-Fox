@@ -10,6 +10,9 @@ module.exports = function(app) {
 
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitutde + "&lon=" + longitude + "&appid=" + keys.owm;
 
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitutde + "&lon=" + longitude + "&appid=" + "" + "&units=imperial";    
+
+
     // initiate ajax call
     $.ajax({
       url: queryURL,
