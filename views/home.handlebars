@@ -1,13 +1,19 @@
+{{!-- Unique Stylesheet --}}
+<link rel="stylesheet" href="/styles/css/home.css" media="screen" title="no title" charset="utf-8">
+
+<!-- TurnJS -->
+<script src="..\js\turnjs4\lib\turn.min.js"></script>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
 
-    <div>
-      <!-- Calendar Box to be added-->
+    {{!-- <div>
       Calendar
-    </div>
+    </div> --}}
     <div>
-      <!-- Logo to be added-->
-      Logo
+      <a class="navbar-brand" href="/">
+        <img id="logo" src="/images/transparentLogoFox.png">
+      </a>
     </div>
 
     <!-- Button on top right of screen with user name, which needs to be filled in from HandleBars template -->
@@ -23,7 +29,6 @@
         <a class="dropdown-item" href="#">Logout</a>
       </div>
     </div>
-
     <!-- /.navbar-collapse -->
   </div>
   <!-- /.container -->
@@ -33,6 +38,7 @@
 <!-- Start of container -->
 <div class="center-page">
 
+<<<<<<< HEAD
     <div class="container">
         <div id="flipbook">
                 <div class="hard"><img src="../styles/images/green_journal_front.jpg" alt="Test"/></div> 
@@ -61,16 +67,36 @@
               document.getElementById("entry-box").style.background=color
               }
         </script>
+=======
+  {{!-- DO THIS BUT LIKE DYNAMICALLY --}}
+  <div class="container" align="center">
+    <div id="flipbook" align="center">
+      <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
+      <div class="hard"></div>
+      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
+      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="rev-paper"/></div>
+      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
+      <div> Static Entry 4 </div>
+      <div class="hard"></div>
+      <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
+>>>>>>> origin/master
     </div>
+
+    <script>
+      $("#flipbook").turn({
+        width: 900,
+        height: 640,
+        autoCenter: true
+      });
+    </script>
+  </div>
 
 </div>
 <!-- End of container -->
 
-<!-- Start of footer -->
 <footer class="footer">
   <div class="two-toned-footer-color"></div>
   <p class="text-muted text-muted-footer text-center">
     &copy; Copyright
   </p>
 </footer>
-<!-- End of footer -->
