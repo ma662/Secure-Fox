@@ -16,6 +16,11 @@ module.exports = function(app) {
     return res.render("login");
   });
 
+  //creating home route just for development
+  app.get("/home", (req, res) => {
+    return res.render("home");
+  });
+
   app.post(
     "/login",
     passport.authenticate("local", {
@@ -88,7 +93,7 @@ module.exports = function(app) {
   });
 
   // Route adding posts
-  app.get("/allposts/add", (req, res) => {
-    res.render("login");
-  });
+  // app.get("/allposts/add", (req, res) => {
+  //   res.render("login");
+  // });
 };

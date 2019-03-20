@@ -49,22 +49,30 @@
       <div class="hard"></div>
       <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
     </div>
-
+      <input type="submit" value="Save your Journal">
     <script>
       $("#flipbook").turn({
         width: 900,
         height: 640,
         autoCenter: true
       });
+      {{!-- nope --}}
+      $("input").click( function( event ) {
+        var first = $('#firstpage').val();
+        $('#second').text(first);
+        $('#firstpage').val('')
+        event.preventDefault();
+    } );
+      
     </script>
   </div>
 
 </div>
 <!-- End of container -->
 
-<footer class="footer">
+{{!-- <footer class="footer">
   <div class="two-toned-footer-color"></div>
   <p class="text-muted text-muted-footer text-center">
     &copy; Copyright
   </p>
-</footer>
+</footer> --}}

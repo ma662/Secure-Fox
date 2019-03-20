@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var JournalEntry = sequelize.define("JournalEntry", {
-    entryTitle: DataTypes.STRING,
+    // entryTitle: DataTypes.STRING,
     journalEntry: DataTypes.TEXT,
     mood: DataTypes.INTEGER,
     associatedImage: DataTypes.STRING,
