@@ -42,7 +42,7 @@ main {
 .center-page {
  display: flex;
 
- background-image: url("/images/wood_bg3.jpg");
+ background-image: url("/images/deskBackground2.jpeg");
  width: 100%;
  height: 100%;
 
@@ -52,10 +52,15 @@ main {
  justify-content: center;
  padding-top: 20px;
 
- border-top: 10px solid black;
+ /* border-top: 10px solid black; */
  /* background-repeat: no-repeat; */
 }
 /* NAV START */
+.fullLogo {
+  display: flex;
+  align-items: center;
+}
+
 #logo {
   width: 2.5em;
   height: 2.5em;
@@ -69,6 +74,61 @@ main {
 .navbar {
   background: white;
   /* border: none; */
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 4em;
+  color: white;
+  font-size: larger;
+}
+
+.nav-solid {
+  background-color: #000000 !important;
+}
+
+.user {
+  position: relative;
+  left: -27%;
+  font-size: larger;
+  color: white;
+}
+
+#letterF,
+#letterO,
+#letterX {
+  margin: 0px -4px;
+  padding: 0;
+}
+
+#letterF {
+  color: #feca31;
+}
+
+#letterO {
+  color: #ee522f;
+}
+
+#letterX {
+  color: #802327;
+}
+
+div#navNameApp {
+  font-size: 154%;
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 3em;
+}
+
+
+#navbarCollapse {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 280px; /*example + never use min-width with this solution */
+  height: 100%;
+  background: #000;
 }
 
 /* media query for nav background color change */

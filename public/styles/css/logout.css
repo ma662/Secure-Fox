@@ -1,0 +1,25 @@
+body, html {
+    height: 100%;
+}
+
+body{
+    background-image: url(../../images/colton-sturgeon-1059840-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.jumbotron.mt-3 {
+    background-color: #e0ae21;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.mt-3, .my-3 {
+    margin-top: 9rem!important;
+}
+
+.myContainer {
+    width: 46%;
+    margin-left: 26%;
+}

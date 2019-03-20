@@ -87,3 +87,71 @@ color: white;
 margin-left: 4px;
 color: #FFC312;
 }
+
+
+/* NAV START */
+.fullLogo {
+    display: flex;
+    align-items: center;
+  }
+  
+  #logo {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  
+  /* override bootstrap hover color and border */
+  .navbar-default .navbar-nav > li > a:hover {
+    color: #4aaaa5;
+  }
+  
+  .navbar {
+    background: white;
+    /* border: none; */
+  }
+  
+  .nav-item:not(:last-child) {
+    margin-right: 4em;
+    color: white;
+    font-size: larger;
+  }
+  
+  .nav-solid {
+    background-color: #000000 !important;
+  }
+  
+  .user {
+    position: relative;
+    left: -27%;
+    font-size: larger;
+    color: white;
+  }
+  
+  #letterF,
+  #letterO,
+  #letterX {
+    margin: 0px -4px;
+    padding: 0;
+  }
+  
+  #letterF {
+    color: #feca31;
+  }
+  
+  #letterO {
+    color: #ee522f;
+  }
+  
+  #letterX {
+    color: #802327;
+  }
+  
+  div#navNameApp {
+    font-size: 154%;
+  }
+  
+  .nav-item:not(:last-child) {
+    margin-right: 3em;
+  }
+  
+  

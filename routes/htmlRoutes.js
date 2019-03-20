@@ -16,6 +16,11 @@ module.exports = function(app) {
     return res.render("login");
   });
 
+  app.get("/logout", (req, res) => {
+    return res.render("logout");
+  });
+
+
   // DEBUGGING & BUILDLING ROUTE FOR JOURNAL
   app.get("/home", (req, res) => {
     return res.render("home");

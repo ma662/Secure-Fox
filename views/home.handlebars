@@ -1,54 +1,57 @@
-{{!-- Unique Stylesheet --}}
-<link rel="stylesheet" href="/styles/css/home.css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="/styles/css/home.css" media="screen" title="no title" charset="utf-8">  
 
 <!-- TurnJS -->
 <script src="..\js\turnjs4\lib\turn.min.js"></script>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-
-    {{!-- <div>
-      Calendar
-    </div> --}}
-    <div>
-      <a class="navbar-brand" href="/">
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top nav nav-solid">
+  <div class="fullLogo">
+    <a class="navbar-brand" href="/">
         <img id="logo" src="/images/transparentLogoFox.png">
-      </a>
+    </a>
+    <div id="navNameApp">
+        <span id="secure">Secure</span>
+        <span id="letterF">F</span>
+        <span id="letterO">o</span>
+        <span id="letterX">x</span>
     </div>
-
-    <!-- Button on top right of screen with user name, which needs to be filled in from HandleBars template -->
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        {{name}}
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Account Settings</a>
-        <a class="dropdown-item" href="#">Help &amp; FAQ</a>
-        <a class="dropdown-item" href="/logout">Logout</a>
-      </div>
-    </div>
-    <!-- /.navbar-collapse -->
   </div>
-  <!-- /.container -->
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <hr>
+    
+    <div class="user">
+      Welcome back ! ( USER )
+    </div>
+    
+    <ul class="navbar-nav">
+    
+      <li class="nav-item">
+        <a class="nav-link" href="/#"><i class="fas fa-user"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/example">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/#"><i class="fas fa-cogs"></i></a>
+      </li>
+      
+    </ul>
+
+  </div>
 </nav>
-<!-- End of navbar -->
+
+<!-- End of navbar --> 
 
 <!-- Start of container -->
 <div class="center-page">
 
-  {{!-- DO THIS BUT LIKE DYNAMICALLY --}}
   <div class="container" align="center">
-    <div id="flipbook" align="center">
-      <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
-      <div class="hard"></div>
-      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
-      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="rev-paper"/></div>
-      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
-      <div> Static Entry 4 </div>
-      <div class="hard"></div>
-      <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
-    </div>
+    <div id="flipbook" align="center" style="position: relative; width: 900px; height: 640px; transform: translate3d(0px, 0px, 0px); margin-left: -225px;">
+    
+    <div class="page-wrapper" page="1" style="position: absolute; overflow: visible; width: 450px; height: 640px; top: 0px; right: 0px; left: auto; z-index: 16; perspective-origin: 0% 50%;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 17; transform-style: preserve-3d; backface-visibility: hidden; width: 450px; height: 640px; transform-origin: 0% 50%; transform: rotateY(-10deg) translate3d(0px, 0px, 0px);"><div class="hard page p1 odd" style="float: left; width: 450px; height: 640px;"><img src="/images/grunge_red_journal.jpg" alt="Test"></div><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 450px; height: 640px; opacity: 0.111111; background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0)));"></div></div><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 16; transform-style: preserve-3d; backface-visibility: hidden; width: 450px; height: 640px; transform-origin: 100% 50%; transform: translateX(-450px) rotateY(170deg);"><div class="hard page p2 even" style="float: left; width: 450px; height: 640px;"></div></div><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 450px; height: 640px; background-color: rgba(0, 0, 0, 0.443); transform: rotateY(0deg);"></div></div><div class="page-wrapper" page="2" style="position: absolute; overflow: visible; width: 450px; height: 640px; top: 0px; left: 0px; right: auto; z-index: 0; perspective-origin: 100% 50%;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 16; transform-style: preserve-3d; backface-visibility: hidden; width: 450px; height: 640px; transform-origin: 100% 50%;"></div><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 17; transform-style: preserve-3d; backface-visibility: hidden; width: 450px; height: 640px; transform-origin: 0% 50%; transform: translateX(450px) rotateY(360deg); display: none;"></div><div style="position: absolute; top: 0px; left: 100%; overflow: hidden; z-index: auto; width: 450px; height: 640px; background-color: rgba(0, 0, 0, 0.5); transform: rotateY(0deg); display: none;"></div></div><div class="page-wrapper" page="3" style="position: absolute; overflow: hidden; width: 450px; height: 640px; top: 0px; right: 0px; left: auto; z-index: 0;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 782px; height: 782px;"><div class="page p3 odd" style="float: left; width: 450px; height: 640px; position: absolute; top: 0px; left: 0px; bottom: auto; right: auto;"><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"></div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 450px; height: 640px;"></div></div><div style="pointer-events: none; display: none; position: absolute; top: -106px; left: 136px; overflow: visible; z-index: auto;"><div style="position: absolute; top: 106px; left: 314px; overflow: hidden; z-index: 0; display: none; width: 782px; height: 782px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; cursor: default; width: 450px; height: 640px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 450px; height: 640px;"></div></div></div><div style="position: absolute; top: 106px; left: 75px; overflow: hidden; z-index: 0; display: none; width: 782px; height: 782px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; cursor: default; width: 450px; height: 640px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 450px; height: 640px;"></div></div></div><div style="position: absolute; top: 106px; left: 525px; overflow: hidden; z-index: 0; display: none; width: 782px; height: 782px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; cursor: default; width: 450px; height: 640px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 450px; height: 640px;"></div></div></div><div style="position: absolute; top: 106px; left: 75px; overflow: hidden; z-index: 0; display: none; width: 782px; height: 782px;"><div style="position: absolute; top: 0px; left: 0px; overflow: visible; z-index: auto; cursor: default; width: 450px; height: 640px;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 450px; height: 640px;"></div></div></div></div><div class="page-wrapper" page="4" style="position: absolute; overflow: hidden; width: 450px; height: 640px; top: 0px; left: 0px; right: auto; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 782px; height: 782px;"><div class="page p4 even" style="float: left; width: 450px; height: 640px; position: absolute; top: 0px; left: 0px; bottom: auto; right: auto;"><textarea>Example page for typing. Need to style this later.</textarea><img class="rev-paper"></div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 450px; height: 640px;"></div></div><div class="page-wrapper" page="5" style="position: absolute; overflow: hidden; width: 450px; height: 640px; top: 0px; right: 0px; left: auto; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 782px; height: 782px;"><div class="page p5 odd" style="float: left; width: 450px; height: 640px; position: absolute; top: 0px; left: 0px; bottom: auto; right: auto;"><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"></div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 450px; height: 640px;"></div></div><div class="page-wrapper" page="6" style="position: absolute; overflow: hidden; width: 450px; height: 640px; top: 0px; left: 0px; right: auto; z-index: 0; display: none;"><div style="position: absolute; top: 0px; left: 0px; overflow: hidden; z-index: auto; width: 782px; height: 782px;"><div class="page p6 even" style="float: left; width: 450px; height: 640px; position: absolute; top: 0px; left: 0px; bottom: auto; right: auto;"> Static Entry 4 </div></div><div style="top: 0px; left: 0px; overflow: hidden; z-index: 1; width: 450px; height: 640px;"></div></div><div class="shadow" style="position: absolute; top: 0px; left: 450px; overflow: hidden; z-index: auto; width: 450px; height: 640px;"></div></div>
 
     <script>
       $("#flipbook").turn({
@@ -65,6 +68,9 @@
 <footer class="footer">
   <div class="two-toned-footer-color"></div>
   <p class="text-muted text-muted-footer text-center">
-    &copy; Copyright
+    © Copyright
   </p>
 </footer>
+
+
+
