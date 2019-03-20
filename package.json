@@ -7,7 +7,8 @@
     "start": "node server.js",
     "lint": "eslint **/*.js --quiet",
     "fix": "eslint --fix .",
-    "test": "npm run lint && mocha -u tdd --reporter spec --exit"
+    "test": "npm run lint && mocha -u tdd --reporter spec --exit",
+    "develop": "nodemon --ignore 'public/*' --ignore 'views/*' server.js"
   },
   "license": "ISC",
   "dependencies": {

@@ -42,28 +42,45 @@
     <div id="flipbook" align="center">
       <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
       <div class="hard"></div>
-      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
-      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="rev-paper"/></div>
-      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
+      <div>
+        {{!-- <form action="" class="myForm">
+          Title: 
+          <input type="text" name="journalTitle" id="journalTitle">
+        </form> --}}
+        {{!-- <section class="titleEntry"></section> --}}
+        <textarea>Example page for typing. Need to style this later.</textarea>
+        <img class="paper" />
+      </div>
+
+      <div>
+        <textarea>Example page for typing. Need to style this later.</textarea>
+        <img class="rev-paper" />
+      </div>
+
+      <div>
+        <textarea>Example page for typing. Need to style this later.</textarea>
+        <img class="paper" />
+      </div>
+
       <div> Static Entry 4 </div>
       <div class="hard"></div>
       <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
     </div>
-      <input type="submit" value="Save your Journal">
+    <input type="submit" value="Save your Journal">
     <script>
       $("#flipbook").turn({
         width: 900,
         height: 640,
         autoCenter: true
       });
-      {{!-- nope --}}
-      $("input").click( function( event ) {
+      { { !--nope --} }
+      $("input").click(function (event) {
         var first = $('#firstpage').val();
         $('#second').text(first);
         $('#firstpage').val('')
         event.preventDefault();
-    } );
-      
+      });
+
     </script>
   </div>
 
