@@ -14,6 +14,41 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+
+  app.post("/api/entry", function(req, res) {
+    console.log(req.body.entry);
+   
+    db.JournalEntry.create({
+      journalEntry: req.body.entry
+
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+    // res.render("/");
+
+      // $("input").click( function( event ) {
+      //   var first = $('#firstpage').val();
+      //   alert("Attemping to post");
+        
+      //   $('#firstpage').val('');
+      //   event.preventDefault();
+
+      //   $.ajax({
+      //     type: 'POST',
+      //     contentType: "text/plain",
+      //     url: "/api/entry"
+      //     data: {
+      //         entry: first,
+      //     },
+      //     success: function() {
+      //         alert('Posted shit to db');
+      //     }
+      //   });
+      // });
+      // res.json(dbExample);
+    // });
+  });
+
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(
