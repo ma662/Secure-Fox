@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Weather API test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+
+</body>
+
+
+<script>
+  // var keys = require("../js/keys.js");
+
+  var magicWeatherButton = $("<button>");
+    magicWeatherButton.text("WEATHER API TIME BABY");
+    magicWeatherButton.appendTo("body");
+    
+    magicWeatherButton.on("click", function() {
+      if (navigator.geolocation) {
+        return navigator.geolocation.getCurrentPosition(showPosition);
+
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+
+        // call route through ajax /api/weather
+      } else { 
+        return alert("Geolocation is not supported by this browser.");
+      }    
+    });
+
+  function showPosition(position) { 
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+
+    lat = lat.toFixed(2);
+    lng = lng.toFixed(2);
+
+    console.log("Latitude: " + position.coords.latitude +
+    "Longitude: " + position.coords.longitude);
+
+    return weatherTime(lat, lng);
+  };
+
+  function weatherTime(latitutde, longitude) {
+
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitutde + "&lon=" + longitude + "&appid=" + "HIDDEN" + "&units=imperial";    
+
+    // Function to call Geocoding results
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+      alert('done');
+    });
+  };
+</script>
+</html>
