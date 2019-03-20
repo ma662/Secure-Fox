@@ -12,8 +12,37 @@ module.exports = function(app) {
     return res.render("signup");
   });
 
+<<<<<<< HEAD
+  app.get("/home",(req,res) => {
+    res.render("home");
+  });
+
+  // app.get("/text",(req,res) => {
+  //   res.render("text");
+    
+  // });
+
+  //log in post 
+  // app.post('/login',(req,res,next) =>{
+    
+  //     passport.authenticate('local',{
+  //     successRedirect:'/text',
+  //     failureRedirect:'/login',
+  //     failureFlash:true
+  //     })(req,res,next);
+    
+  // });
+  app.post('/login', 
+  passport.authenticate('local',
+   { failureRedirect: '/login',failureFlash:'Bad Login!'}),
+   
+  function(req, res,next) {
+    
+   res.render('home');
+=======
   app.get("/login", (req, res) => {
     return res.render("login");
+>>>>>>> origin/master
   });
 
   app.post(
