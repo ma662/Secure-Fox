@@ -174,15 +174,15 @@ nav.sections {
 /* TurnJS Flipbook =================================== */
 
 textarea {
-  background-color:#0000;
+  background-color: red;
   position: inherit;
-  top: 0;
+  top: 3em;
   left: 0;
   width: 420px;
   height: 640px;
 
-  padding-top: 2em;
-  padding-left: 3em;
+  padding-top: 0.8em;
+  padding-left: 0.8em;
   word-wrap: break-word;
   outline:none;
 }

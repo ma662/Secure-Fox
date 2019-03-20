@@ -74,7 +74,7 @@ header .overlay {
   padding: 2em;
   background-color: transparent !important;
   transition: background-color 0.4s ease-out !important;
-  transition: top 0.3s;
+  /* transition: top 0.3s; */
 }
 
 .nav-solid {

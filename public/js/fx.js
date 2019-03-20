@@ -1,3 +1,4 @@
+
 // responsive navbar (changes color on scrolling)
 $(window).scroll(function() {
   let height = $(".navbar").height();
@@ -24,13 +25,14 @@ window.onscroll = function() {
       $(".navbar").css("top", "0").fadeIn(500);
       $("#back2Top").fadeOut();
     } else {
-      $(".navbar").fadeOut(500);
+      // $(".navbar").fadeOut(500);
       $("#back2Top").fadeIn();
     }
     prevScrollpos = currentScrollPos;
   }
 };
 
-// $("#back2Top").click(() => {
-//   $("html, body").animate({scrollTop : 0},800);
-// });
+$("#back2Top").on('click', (event) => {
+  preventDefault();
+  $(".navbar").fadeIn(500);
+})
