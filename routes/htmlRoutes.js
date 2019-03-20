@@ -16,6 +16,11 @@ module.exports = function(app) {
     return res.render("login");
   });
 
+  // DEBUGGING & BUILDLING ROUTE FOR JOURNAL
+  app.get("/home", (req, res) => {
+    return res.render("home");
+  });
+
   app.post(
     "/login",
     passport.authenticate("local", {
