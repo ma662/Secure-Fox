@@ -8,11 +8,7 @@
   },
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "root",
-=======
-    "password": null,
->>>>>>> c79fd102d9d4754b3944311e6a27e277644ccf89
     "database": "journal_db",
     "host": "localhost",
     "dialect": "mysql"
