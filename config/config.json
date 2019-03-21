@@ -8,14 +8,14 @@
   },
   "development": {
     "username": "root",
-    "password": "",
+    "password": "root",
     "database": "journal_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "",
+    "password": "root",
     "database": "test_db",
     "host": "localhost",
     "dialect": "mysql",
