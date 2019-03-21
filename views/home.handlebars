@@ -23,7 +23,7 @@
     <hr>
     
     <div class="user">
-      Welcome back, {{username}}
+      Welcome back, <span id="uname">{{username}}</span>
     </div>
     
     <ul class="navbar-nav">
@@ -71,18 +71,20 @@
       });
 
       $("input").on("click", (event) => {
-       event.preventDefault();
+        event.preventDefault();
+        var uname = $("#uname").val();
+      
+        var first = $("#firstpage").val();
+        $('#second').text(first);
+        $("#firstpage").val('');
 
-       var first = $("#firstpage").val();
-       $('#second').text(first);
-       $("#firstpage").val('');
-
-       $.ajax({
-         type: "POST",
-         url: "/api/entry",
-         data: {
-           entry: first
-         }
+        $.ajax({
+          type: "POST",
+          url: "/api/entry",
+          data: {
+            entry: first,
+            user: uname
+          }
        });
      });
     </script>
