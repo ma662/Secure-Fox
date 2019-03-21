@@ -69,6 +69,22 @@
         height: 640,
         autoCenter: true
       });
+
+      $("input").on("click", (event) => {
+       event.preventDefault();
+
+       var first = $("#firstpage").val();
+       $('#second').text(first);
+       $("#firstpage").val('');
+
+       $.ajax({
+         type: "POST",
+         url: "/api/entry",
+         data: {
+           entry: first
+         }
+       });
+     });
     </script>
   </div>
 
@@ -81,6 +97,3 @@
     © Copyright
   </p>
 </footer>
-
-
-

@@ -20,7 +20,6 @@ module.exports = function(app) {
     return res.render("logout");
   });
 
-
   // DEBUGGING & BUILDLING ROUTE FOR JOURNAL
   app.get("/home", (req, res) => {
     return res.render("home");
@@ -33,7 +32,9 @@ module.exports = function(app) {
       failureFlash: "Bad Login!"
     }),
     (req, res) => {
-      return res.render("home");
+      return res.render("home", {
+        username: username
+      });
     }
   );
 

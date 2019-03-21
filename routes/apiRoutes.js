@@ -1,17 +1,22 @@
 var db = require("../models");
-var keys = require("../config/keys");
+// var keys = require("../config/keys");
 
 module.exports = function(app) {
-  
   // Open Weather Map API call
   app.get("/api/weather", function(req, res) {
     // retrieve lat & lng
     //req.body (do stuff)
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitutde + "&lon=" + longitude + "&appid=" + keys.owm;
+    // var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitutde + "&lon=" + longitude + "&appid=" + keys.owm;
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitutde + "&lon=" + longitude + "&appid=" + "" + "&units=imperial";    
-
+    var queryURL =
+      "https://api.openweathermap.org/data/2.5/weather?lat=" +
+      latitutde +
+      "&lon=" +
+      longitude +
+      "&appid=" +
+      "" +
+      "&units=imperial";
 
     // initiate ajax call
     $.ajax({
@@ -22,8 +27,7 @@ module.exports = function(app) {
 
       res.json(response);
     });
-    
-    
+
     then(function(dbExamples) {
       res.json(dbExamples);
     });
