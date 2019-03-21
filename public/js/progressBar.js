@@ -14,6 +14,6 @@ setInterval(function() {
   if (prgNumber === 100) {
     prgNumber = 0;
 
-    // window.location.href = "http://localhost:3000/";
+    window.location.href = "/";
   }
-}, 1000);
+}, 250);
