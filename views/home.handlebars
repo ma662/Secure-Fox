@@ -99,17 +99,15 @@
       });
 
     $(document).ready(function() {
+      loadPages(true);
+    });
+
+    $("#load").on("click", function() {
+      // get rid of back cover then load pages + new back cover
       loadPages();
     });
 
-    $("#load").on("click", (event) => {
-      // get rid of back cover then load pages + new back cover
-      loadPages(event);
-    });
-
-    function loadPages(e) {
-      e.preventDefault();
-
+    function loadPages(initial) {
       var uname = $("#uname").text();
       //alert("attempting to load");
 
@@ -129,10 +127,11 @@
             // just load covers and mid page
           }
           else {
-            // load covers + this stuff 
-            $("#flipbook").turn("removePage", 6);
-            $("#flipbook").turn("removePage", 5);
-
+            if (initial) {
+              // load covers + this stuff 
+              $("#flipbook").turn("removePage", 6);
+              $("#flipbook").turn("removePage", 5);
+            }
 
             for (var i=0; i<pages.length; i++) {
               var pgnum = pages[i].id;
@@ -160,11 +159,11 @@
 
             if ($("#flipbook").turn('pages') % 2) {
               // add blank page before red cover
-              alert("true, even pageCount");
-              var newPage = $("<div>");
-              $("<textarea>").text('').appendTo(newPage);
-              newPage.append("<img class='rev-paper'>");
-              $("#flipbook").turn("addPage", newPage);
+              //alert("true, even pageCount");
+              var blankPage = $("<div>");
+              $("<textarea>").text('').appendTo(blankPage);
+              blankPage.append("<img class='rev-paper'>");
+              $("#flipbook").turn("addPage", blankPage);
             }
             var elem = $("<div>", {class: 'hard'});
             $("#flipbook").turn("addPage", elem);
