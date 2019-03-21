@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
     // entryTitle: DataTypes.STRING,
     Entry: DataTypes.TEXT,
 
-    User: DataTypes.TEXT,
+    User: DataTypes.TEXT
     // mood: DataTypes.STRING,
     // associatedImage: DataTypes.STRING,
     // location: DataTypes.STRING,

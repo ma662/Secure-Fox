@@ -41,15 +41,15 @@ module.exports = function(app) {
 
   app.post("/api/pages", function(req, res) {
     // console.log(req.body)
-    
+
     db.Entry.findAll({
       where: {
         User: req.body.user
       }
-    }).then(function(dbResp){
+    }).then(function(dbResp) {
       var resArr = [];
 
-      for (var i=0; i<dbResp.length; i++) {
+      for (var i = 0; i < dbResp.length; i++) {
         // console.log(dbResp[i].Entry); // individual posts
 
         //create object to send back
@@ -58,7 +58,7 @@ module.exports = function(app) {
         var post = {
           id: id,
           entry: entry
-        }
+        };
 
         resArr.push(post);
       }
@@ -72,7 +72,7 @@ module.exports = function(app) {
 
   app.post("/api/entry", function(req, res) {
     // console.log(req.body);
-   
+
     db.Entry.create({
       Entry: req.body.entry,
       User: req.body.user

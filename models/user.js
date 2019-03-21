@@ -9,9 +9,8 @@ module.exports = function(sequelize, DataTypes) {
     // User.hasMany(models.Entry, {
     //   onDelete. "cascade"
     // });
-    
-    User.hasMany(models.UserEntry, {
-    });
+
+    User.hasMany(models.UserEntry, {});
   };
 
   return User;
