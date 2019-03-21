@@ -32,8 +32,15 @@ module.exports = function(app) {
       failureFlash: "Bad Login!"
     }),
     (req, res) => {
-      return res.render("home", {
-        username: username
+      db.User.findOne({
+        where: {
+          email: req.body.email
+        }
+      }).then(function(dbRes) {
+        var username = dbRes.name;
+        return res.render("home", {
+          username: username
+        });
       });
     }
   );
