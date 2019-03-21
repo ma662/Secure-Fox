@@ -43,8 +43,8 @@ module.exports = function(app) {
     console.log(req.body);
    
     db.Entry.create({
-      Entry: req.body.entry
-
+      Entry: req.body.entry,
+      User: req.body.user
     }).then(function(dbPost) {
       res.json(dbPost);
     });

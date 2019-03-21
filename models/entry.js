@@ -2,6 +2,8 @@ module.exports = function(sequelize, DataTypes) {
   var Entry = sequelize.define("Entry", {
     // entryTitle: DataTypes.STRING,
     Entry: DataTypes.TEXT,
+
+    User: DataTypes.TEXT,
     // mood: DataTypes.STRING,
     // associatedImage: DataTypes.STRING,
     // location: DataTypes.STRING,

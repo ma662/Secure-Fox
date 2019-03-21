@@ -55,9 +55,6 @@
 <div class="center-page">
   <input type="submit" value="Save your Journal" method="POST" action="/api/entry">
 
-
-  <div class="center-page">
-
   {{!-- DO THIS BUT LIKE DYNAMICALLY --}}
   <div class="container" align="center">
     <div id="flipbook" align="center">
@@ -80,7 +77,7 @@
 
       $("input").on("click", (event) => {
         event.preventDefault();
-        var uname = $("#uname").val();
+        var uname = $("#uname").text();
       
         var first = $("#firstpage").val();
         $('#second').text(first);
