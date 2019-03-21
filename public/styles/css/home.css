@@ -36,6 +36,13 @@ main {
   margin-bottom: 30px;
 }
 
+#joe {
+  width: 22em;
+  top: 5rem;
+  position: absolute;
+  left: 3rem;
+  z-index: -3;
+}
 
 #secure {
   margin-right: -2px;
@@ -53,6 +60,7 @@ main {
 
  width: 100%;
  height: 100%;
+ z-index: 0;
 
  background-image: url("/images/deskBackground2.jpeg");
  /* background-size: auto; */

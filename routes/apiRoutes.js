@@ -39,8 +39,39 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/api/pages", function(req, res) {
+    // console.log(req.body)
+    
+    db.Entry.findAll({
+      where: {
+        User: req.body.user
+      }
+    }).then(function(dbResp){
+      var resArr = [];
+
+      for (var i=0; i<dbResp.length; i++) {
+        // console.log(dbResp[i].Entry); // individual posts
+
+        //create object to send back
+        var id = dbResp[i].id;
+        var entry = dbResp[i].Entry;
+        var post = {
+          id: id,
+          entry: entry
+        }
+
+        resArr.push(post);
+      }
+
+      // console.log(resArr);
+      res.json({
+        resArr: resArr
+      });
+    });
+  });
+
   app.post("/api/entry", function(req, res) {
-    console.log(req.body);
+    // console.log(req.body);
    
     db.Entry.create({
       Entry: req.body.entry,
@@ -48,29 +79,6 @@ module.exports = function(app) {
     }).then(function(dbPost) {
       res.json(dbPost);
     });
-    // res.render("/");
-
-      // $("input").click( function( event ) {
-      //   var first = $('#firstpage').val();
-      //   alert("Attemping to post");
-        
-      //   $('#firstpage').val('');
-      //   event.preventDefault();
-
-      //   $.ajax({
-      //     type: 'POST',
-      //     contentType: "text/plain",
-      //     url: "/api/entry"
-      //     data: {
-      //         entry: first,
-      //     },
-      //     success: function() {
-      //         alert('Posted shit to db');
-      //     }
-      //   });
-      // });
-      // res.json(dbExample);
-    // });
   });
 
   // Delete an example by id

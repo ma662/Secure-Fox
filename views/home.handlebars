@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="/styles/css/home.css" media="screen" title="no title" charset="utf-8">  
 
 {{!-- AJAX --}}
-<script
+{{!-- <script
  src="http://code.jquery.com/jquery-3.3.1.js"
  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
- crossorigin="anonymous"></script>
+ crossorigin="anonymous"></script> --}}
 
 <!-- TurnJS -->
-<script src="..\js\turnjs4\lib\turn.min.js"></script>
+<script src="..\js\turnjs4\lib\turn.js"></script>
 
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top nav nav-solid">
   <div class="fullLogo">
@@ -53,19 +53,22 @@
 
 <!-- Start of container -->
 <div class="center-page">
-  <input type="submit" value="Save your Journal" method="POST" action="/api/entry">
+  <img src="/images/cup_of_Joe.png" id="joe"/>
+  <input id="save" type="submit" value="Save your Journal" method="POST" action="/api/entry">
+  <input hidden id="load" type="submit" value="Load Journal" method="POST" action="/api/pages">
+
 
   {{!-- DO THIS BUT LIKE DYNAMICALLY --}}
-  <div class="container" align="center">
+  <div class="container" id="book-holder" align="center">
     <div id="flipbook" align="center">
       <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
       <div class="hard"></div>
-      <div><textarea id="firstpage">Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
-      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="rev-paper"/></div>
-      <div><textarea id="second"></textarea><img class="paper"/></div>
-      <div> Static Entry 4 </div>
+      <div><textarea id="firstpage">Use this page to save entries into your secure journal!</textarea><img class="paper"/></div>
+      <div><textarea></textarea><img class="rev-paper"/></div>
+      {{!-- <div class="paper"><textarea></textarea><img class="paper"/></div> --}}
+      {{!-- <div class="rev-paper"> Static Entry 4 </div> --}}
       <div class="hard"></div>
-      <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
+      <div class="hard"><img src="/images/grunge_red_journal.jpg"/></div>
     </div>
 
     <script>
@@ -75,15 +78,15 @@
         autoCenter: true
       });
 
-      $("input").on("click", (event) => {
+      $("#save").on("click", (event) => {
         event.preventDefault();
         var uname = $("#uname").text();
       
         var first = $("#firstpage").val();
-        $('#second').text(first);
+        //$('#second').text(first);
         $("#firstpage").val('');
-        
-        alert("Attempting to save in db");
+          
+          //alert("Attempting to save in db");
 
         $.ajax({
           type: "POST",
@@ -92,8 +95,86 @@
             entry: first,
             user: uname
           }
-       });
-     });
+        }).then(loadPages(event));
+      });
+
+    $(document).ready(function() {
+      loadPages();
+    });
+
+    $("#load").on("click", (event) => {
+      // get rid of back cover then load pages + new back cover
+      loadPages(event);
+    });
+
+    function loadPages(e) {
+      e.preventDefault();
+
+      var uname = $("#uname").text();
+      //alert("attempting to load");
+
+      $.ajax({
+        type: "POST",
+        url: "/api/pages",
+        data: {
+          user: uname
+        }
+      }).then(function(arr) {
+        let pages = arr.resArr;
+        console.log(pages);
+        console.log("pages length is " + pages.length);
+          // no pages found
+          if (pages.length < 1 ) {
+            alert("No pages found, use the first page and save to start your journal");
+            // just load covers and mid page
+          }
+          else {
+            // load covers + this stuff 
+            $("#flipbook").turn("removePage", 6);
+            $("#flipbook").turn("removePage", 5);
+
+
+            for (var i=0; i<pages.length; i++) {
+              var pgnum = pages[i].id;
+              var txt = pages[i].entry;
+
+              var newPage = $("<div>");
+              $("<textarea>").text(txt).appendTo(newPage);
+
+              if(pgnum % 2) {
+                // append regular paper
+                newPage.append("<img class='paper'>");
+              }
+              else {
+                newPage.append("<img class='rev-paper'>");
+              }
+
+              $("#flipbook").turn("addPage", newPage, i+4);
+              console.log($('#flipbook').turn('pages'));
+            }
+
+            console.log($("#flipbook").data());
+
+            var pageCount = $('#flipbook').turn('pages') + 1;
+            console.log("here:" + pageCount);
+
+            if ($("#flipbook").turn('pages') % 2) {
+              // add blank page before red cover
+              alert("true, even pageCount");
+              var newPage = $("<div>");
+              $("<textarea>").text('').appendTo(newPage);
+              newPage.append("<img class='rev-paper'>");
+              $("#flipbook").turn("addPage", newPage);
+            }
+            var elem = $("<div>", {class: 'hard'});
+            $("#flipbook").turn("addPage", elem);
+            
+            var elem2 = $("<div>", {class: 'hard'});
+            elem2.append("<img src='/images/grunge_red_journal.jpg'/>");
+            $("#flipbook").turn("addPage", elem2);
+          }
+      });
+    };
     </script>
    
   </div>
@@ -105,3 +186,8 @@
     © Copyright
   </p>
 </footer>
+
+
+<script>
+
+</script>
