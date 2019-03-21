@@ -1,5 +1,11 @@
 <link rel="stylesheet" href="/styles/css/home.css" media="screen" title="no title" charset="utf-8">  
 
+{{!-- AJAX --}}
+<script
+ src="http://code.jquery.com/jquery-3.3.1.js"
+ integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+ crossorigin="anonymous"></script>
+
 <!-- TurnJS -->
 <script src="..\js\turnjs4\lib\turn.min.js"></script>
 
@@ -47,6 +53,8 @@
 
 <!-- Start of container -->
 <div class="center-page">
+  <input type="submit" value="Save your Journal" method="POST" action="/api/entry">
+
 
   <div class="center-page">
 
@@ -55,9 +63,9 @@
     <div id="flipbook" align="center">
       <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
       <div class="hard"></div>
-      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
+      <div><textarea id="firstpage">Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
       <div><textarea>Example page for typing. Need to style this later.</textarea><img class="rev-paper"/></div>
-      <div><textarea>Example page for typing. Need to style this later.</textarea><img class="paper"/></div>
+      <div><textarea id="second"></textarea><img class="paper"/></div>
       <div> Static Entry 4 </div>
       <div class="hard"></div>
       <div class="hard"><img src="/images/grunge_red_journal.jpg" alt="Test" /></div>
@@ -77,6 +85,8 @@
         var first = $("#firstpage").val();
         $('#second').text(first);
         $("#firstpage").val('');
+        
+        alert("Attempting to save in db");
 
         $.ajax({
           type: "POST",
@@ -88,10 +98,9 @@
        });
      });
     </script>
+   
   </div>
-
 </div>
-<!-- End of container -->
 
 <footer class="footer">
   <div class="two-toned-footer-color"></div>
