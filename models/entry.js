@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
-  var JournalEntry = sequelize.define("JournalEntry", {
+  var Entry = sequelize.define("Entry", {
     // entryTitle: DataTypes.STRING,
-    journalEntry: DataTypes.TEXT,
+    Entry: DataTypes.TEXT,
     // mood: DataTypes.STRING,
     // associatedImage: DataTypes.STRING,
     // location: DataTypes.STRING,
@@ -9,9 +9,8 @@ module.exports = function(sequelize, DataTypes) {
     // weather: DataTypes.STRING
   });
 
-  JournalEntry.associate = models => {
-    JournalEntry.hasMany(models.UserEntries, {});
+  Entry.associate = models => {
+    Entry.hasMany(models.UserEntry, {});
   };
-
-  return JournalEntry;
+  return Entry;
 };

@@ -16,10 +16,10 @@ module.exports = function(app) {
   });
 
   app.post("/api/entry", function(req, res) {
-    console.log(req.body.entry);
+    console.log(req.body);
    
-    db.JournalEntry.create({
-      journalEntry: req.body.entry
+    db.Entry.create({
+      Entry: req.body.entry
 
     }).then(function(dbPost) {
       res.json(dbPost);
