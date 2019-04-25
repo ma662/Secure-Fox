@@ -4,6 +4,7 @@ https://secure-fox.herokuapp.com/
 
 ## Technologies:
 - NodeJS
+- Express
 - bCrypt
 - PassportJS
 - TurnJS
