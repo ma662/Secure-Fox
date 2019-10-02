@@ -16,8 +16,8 @@ https://secure-fox.herokuapp.com/
 - Handlebars templating framework
 
 Credits:
-Myles Alcala - Tech Lead, Backend (Page animations, Entry saving mechanism, Repository management, Integrations)
-Farhan Afzal - Project lead, User registrations and logins
-Jose L. Saboya - Database management, Frontend
-Eliezer Vazquez - Frontend
-Frank Vasquez - Frontend
+* Myles Alcala - Tech Lead, Backend (Page animations, Entry saving mechanism, Repository management, Integrations)
+* Farhan Afzal - Project lead, User registrations and logins
+* Jose L. Saboya - Database management, Frontend
+* Eliezer Vazquez - Frontend
+* Frank Vasquez - Frontend
