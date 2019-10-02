@@ -5,6 +5,8 @@ Our team took on this challenge with the idea in mind that there was a lack of o
  
 https://secure-fox.herokuapp.com/
 
+![](secure-fox-demo.gif)
+
 ## Technologies:
 - NodeJS
 - Express
