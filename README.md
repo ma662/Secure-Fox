@@ -19,7 +19,7 @@ https://secure-fox.herokuapp.com/
 
 Credits:
 * Myles Alcala - Tech Lead, Backend (Page animations, Entry saving mechanism, Repository management, Integrations)
-* Farhan Afzal - Project lead, User registrations and logins
+* Farhan Afzal - Project lead, Front End,  User registrations and logins
 * Jose L. Saboya - Database management, Frontend
 * Eliezer Vazquez - Frontend
 * Frank Vasquez - Frontend
