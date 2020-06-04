@@ -148,6 +148,8 @@ color: #FFC312;
   
   div#navNameApp {
     font-size: 154%;
+    width: 7em;
+    letter-spacing: 2px;
   }
   
   .nav-item:not(:last-child) {

@@ -101,6 +101,9 @@ header .overlay {
   font-size: 1.75em;
   color: white;
   font-family: 'ZCOOL XiaoWei', serif;
+
+  width: 7em;
+  letter-spacing: 2px;
   /* letter-spacing: 2PX; */
 }
 

@@ -74,7 +74,7 @@ main {
 /* NAV START */
 .fullLogo {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 
 #logo {
@@ -125,6 +125,8 @@ main {
 
 div#navNameApp {
   font-size: 154%;
+  width: 7em;
+  letter-spacing: 2px;
 }
 
 .nav-item:not(:last-child) {
